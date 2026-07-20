@@ -43,8 +43,12 @@ but it'll look and read much better once we add them)
    "Leave a review" button.
 
 6. OPTIONAL EXTRAS you left blank (all optional): office hours,
-   FAQs, testimonials, "areas served," realtor/title partners,
-   and a domain (looks like callmyfriendstef.com — confirm?).
+   FAQs, testimonials, "areas served," and realtor/title partners.
+
+DOMAIN: www.callmyfriendstef.com (confirmed). It's set as the site's
+canonical URL and is in the sitemap. When you deploy on Netlify, add
+this as the custom domain (Netlify → Domain settings) and it'll issue
+the free HTTPS certificate automatically.
 
 --------------------------------------------------------
 THINGS ALREADY WIRED UP FROM YOUR ANSWERS
