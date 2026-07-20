@@ -1,0 +1,213 @@
+/* ============================================================
+   Simmons Mortgage — Your mortgage BFF
+   Black & white brand. Static site, Netlify-ready.
+   ============================================================ */
+
+:root{
+  --ink:#111111;
+  --ink-soft:#333333;
+  --muted:#6b6b6b;
+  --paper:#ffffff;
+  --paper-warm:#faf9f7;
+  --line:#e6e4e0;
+  --line-strong:#111111;
+  --shadow:0 18px 50px rgba(17,17,17,.10);
+  --radius:16px;
+  --wrap:1120px;
+}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  font-family:"Inter",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  color:var(--ink);
+  background:var(--paper);
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+}
+h1,h2,h3,h4{
+  font-family:"Fraunces","Georgia",serif;
+  font-weight:600;
+  line-height:1.12;
+  margin:0 0 .4em;
+  letter-spacing:-.01em;
+}
+h1{font-size:clamp(2.4rem,6vw,4rem)}
+h2{font-size:clamp(1.8rem,4vw,2.7rem)}
+h3{font-size:1.3rem}
+p{margin:0 0 1rem}
+a{color:var(--ink);text-decoration:none}
+img{max-width:100%;display:block}
+.wrap{max-width:var(--wrap);margin:0 auto;padding:0 24px}
+.eyebrow{
+  text-transform:uppercase;
+  letter-spacing:.18em;
+  font-size:.74rem;
+  font-weight:700;
+  color:var(--muted);
+  margin:0 0 .8rem;
+}
+
+/* ---------- Buttons ---------- */
+.btn{
+  display:inline-flex;align-items:center;gap:.5rem;
+  padding:.85rem 1.5rem;
+  border-radius:999px;
+  font-weight:600;font-size:.98rem;
+  border:1.5px solid var(--ink);
+  transition:transform .15s ease,background .15s ease,color .15s ease;
+  cursor:pointer;
+}
+.btn.solid{background:var(--ink);color:#fff}
+.btn.solid:hover{transform:translateY(-2px);background:#000}
+.btn.ghost{background:transparent;color:var(--ink)}
+.btn.ghost:hover{background:var(--ink);color:#fff;transform:translateY(-2px)}
+.btn.small{padding:.55rem 1.1rem;font-size:.9rem}
+
+/* ---------- Utility bar ---------- */
+.util{background:var(--ink);color:#fff;font-size:.86rem}
+.util .wrap{display:flex;justify-content:space-between;align-items:center;gap:1rem;padding-top:.5rem;padding-bottom:.5rem}
+.util a{color:#fff}
+.util a:hover{text-decoration:underline}
+.util .states{color:#c9c7c2;font-size:.8rem}
+
+/* ---------- Header ---------- */
+header.site{
+  position:sticky;top:0;z-index:50;
+  background:rgba(255,255,255,.9);
+  backdrop-filter:saturate(160%) blur(10px);
+  border-bottom:1px solid var(--line);
+}
+header.site .wrap{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding-top:.9rem;padding-bottom:.9rem}
+.brand{display:flex;align-items:baseline;gap:.6rem;line-height:1}
+.brand .name{font-family:"Fraunces",serif;font-size:1.5rem;font-weight:600;letter-spacing:-.01em}
+.brand .sub{font-size:.72rem;text-transform:uppercase;letter-spacing:.14em;color:var(--muted)}
+nav.main ul{display:flex;gap:1.6rem;list-style:none;margin:0;padding:0;align-items:center}
+nav.main a{font-size:.95rem;font-weight:500;color:var(--ink-soft)}
+nav.main a:hover{color:var(--ink)}
+.nav-cta{display:flex;align-items:center;gap:.7rem}
+.menu-toggle{display:none;background:none;border:0;font-size:1.6rem;cursor:pointer;color:var(--ink)}
+
+/* ---------- Hero ---------- */
+.hero{background:var(--paper-warm);border-bottom:1px solid var(--line);overflow:hidden}
+.hero .wrap{display:grid;grid-template-columns:1.15fr .85fr;gap:3rem;align-items:center;padding-top:4.5rem;padding-bottom:4.5rem}
+.hero h1 span{display:block}
+.hero .tagline{
+  font-family:"Fraunces",serif;font-style:italic;
+  font-size:clamp(1.3rem,2.6vw,1.7rem);
+  color:var(--ink);margin:.2rem 0 1.2rem;
+}
+.hero .lead{font-size:1.12rem;color:var(--ink-soft);max-width:36ch}
+.hero .btn-row{display:flex;flex-wrap:wrap;gap:.8rem;margin-top:1.6rem}
+.hero-badges{display:flex;flex-wrap:wrap;gap:1.2rem;margin-top:2rem;font-size:.82rem;color:var(--muted)}
+.hero-badges span{display:flex;align-items:center;gap:.4rem}
+
+/* headshot frame */
+.portrait{
+  position:relative;border-radius:var(--radius);overflow:hidden;
+  aspect-ratio:4/5;background:var(--ink);box-shadow:var(--shadow);
+}
+.portrait img{width:100%;height:100%;object-fit:cover}
+.portrait.placeholder{
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  color:#fff;text-align:center;gap:.4rem;padding:2rem;
+  background:linear-gradient(160deg,#1a1a1a,#000);
+}
+.portrait.placeholder .ph-mark{font-family:"Fraunces",serif;font-size:3rem;line-height:1}
+.portrait.placeholder small{color:#b9b7b2;font-size:.72rem;letter-spacing:.08em;text-transform:uppercase}
+
+/* ---------- Section rhythm ---------- */
+section{padding:4.5rem 0}
+.section-head{max-width:60ch;margin-bottom:2.4rem}
+.alt{background:var(--paper-warm);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+
+/* ---------- About ---------- */
+.about .wrap{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center}
+.about blockquote{
+  font-family:"Fraunces",serif;font-size:1.35rem;line-height:1.4;
+  border-left:3px solid var(--ink);padding-left:1.3rem;margin:0 0 1.4rem;color:var(--ink)
+}
+.about .signoff{font-weight:600}
+
+/* ---------- Loan cards ---------- */
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem}
+.card{
+  border:1px solid var(--line);border-radius:var(--radius);
+  padding:1.6rem;background:var(--paper);
+  transition:transform .18s ease,box-shadow .18s ease,border-color .18s ease;
+}
+.card:hover{transform:translateY(-4px);box-shadow:var(--shadow);border-color:var(--ink)}
+.card .ic{font-size:1.6rem;margin-bottom:.6rem;display:block}
+.card h3{margin-bottom:.3rem}
+.card p{font-size:.95rem;color:var(--muted);margin:0}
+
+/* ---------- Process ---------- */
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:1.2rem;counter-reset:step}
+.step{position:relative;padding:1.5rem;border:1px solid var(--line);border-radius:var(--radius);background:var(--paper)}
+.step::before{
+  counter-increment:step;content:counter(step,decimal-leading-zero);
+  font-family:"Fraunces",serif;font-size:1.6rem;color:var(--ink);display:block;margin-bottom:.5rem
+}
+.step h3{font-size:1.1rem}
+.step p{font-size:.92rem;color:var(--muted);margin:0}
+
+/* ---------- Contact ---------- */
+.contact .wrap{display:grid;grid-template-columns:1fr 1fr;gap:3rem}
+.contact-info dl{margin:0}
+.contact-info dt{font-size:.75rem;text-transform:uppercase;letter-spacing:.12em;color:var(--muted);margin-top:1.2rem}
+.contact-info dd{margin:.15rem 0 0;font-size:1.05rem;font-weight:500}
+.contact-info dd a:hover{text-decoration:underline}
+.contact-ctas{display:flex;flex-wrap:wrap;gap:.7rem;margin-top:1.8rem}
+
+form.cg{background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);padding:1.8rem}
+form.cg label{display:block;font-size:.85rem;font-weight:600;margin:.9rem 0 .35rem}
+form.cg input,form.cg textarea,form.cg select{
+  width:100%;padding:.75rem .85rem;border:1px solid var(--line);border-radius:10px;
+  font:inherit;color:var(--ink);background:#fff;
+}
+form.cg input:focus,form.cg textarea:focus,form.cg select:focus{outline:2px solid var(--ink);border-color:var(--ink)}
+form.cg textarea{min-height:120px;resize:vertical}
+form.cg .btn{margin-top:1.2rem;width:100%;justify-content:center}
+form.cg .hp{position:absolute;left:-9999px}
+.form-note{font-size:.78rem;color:var(--muted);margin-top:.9rem;text-align:center}
+
+/* ---------- Footer & compliance ---------- */
+footer.site{background:var(--ink);color:#dcdad5;padding:3.5rem 0 2rem;font-size:.9rem}
+footer.site a{color:#fff}
+footer.site a:hover{text-decoration:underline}
+.foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:2rem;margin-bottom:2.4rem}
+.foot-grid h4{color:#fff;font-family:"Inter",sans-serif;font-size:.78rem;text-transform:uppercase;letter-spacing:.14em;margin:0 0 .9rem}
+.foot-grid ul{list-style:none;margin:0;padding:0}
+.foot-grid li{margin-bottom:.5rem}
+.foot-brand .name{font-family:"Fraunces",serif;font-size:1.4rem;color:#fff;display:block;margin-bottom:.3rem}
+.eho{display:flex;align-items:center;gap:.6rem;margin-top:1.1rem;color:#c9c7c2}
+.eho svg{flex:none}
+.compliance{border-top:1px solid #333;padding-top:1.6rem;font-size:.78rem;color:#9c9a95;line-height:1.55}
+.compliance strong{color:#cfcdc8}
+.compliance p{margin:0 0 .7rem}
+.compliance .flag{background:#2a2a2a;border-left:3px solid #fff;padding:.7rem .9rem;border-radius:6px;color:#e7e5e0}
+
+/* ---------- Responsive ---------- */
+@media (max-width:900px){
+  .hero .wrap{grid-template-columns:1fr;gap:2.2rem}
+  .portrait{max-width:360px;margin:0 auto}
+  .about .wrap,.contact .wrap{grid-template-columns:1fr;gap:2rem}
+  .cards,.steps{grid-template-columns:1fr 1fr}
+  .foot-grid{grid-template-columns:1fr 1fr}
+}
+@media (max-width:640px){
+  nav.main{
+    position:absolute;top:100%;left:0;right:0;background:#fff;border-bottom:1px solid var(--line);
+    display:none;padding:1rem 0;box-shadow:var(--shadow);
+  }
+  nav.main.open{display:block}
+  nav.main ul{flex-direction:column;gap:0;align-items:stretch}
+  nav.main li{padding:.2rem 24px}
+  nav.main a{display:block;padding:.6rem 0}
+  .menu-toggle{display:block}
+  header.site .wrap{position:relative}
+  .util .states{display:none}
+  .cards,.steps,.foot-grid{grid-template-columns:1fr}
+  .nav-cta .btn.ghost{display:none}
+}
