@@ -219,7 +219,7 @@ footer.site a:hover{color:var(--accent);text-decoration:underline}
 .reviews-band .g .b{color:#4285F4}.reviews-band .g .r{color:#EA4335}.reviews-band .g .y{color:#FBBC05}.reviews-band .g .g2{color:#34A853}
 
 /* ---------- Areas served ---------- */
-.market-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem}
+.market-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:1.2rem}
 .market{border:1px solid var(--line);border-radius:var(--radius);padding:1.6rem;background:var(--paper)}
 .market h3{display:flex;align-items:center;gap:.5rem;margin-bottom:.5rem}
 .market .cities{color:var(--muted);font-size:.96rem;margin:0}
@@ -244,7 +244,7 @@ footer.site a:hover{color:var(--accent);text-decoration:underline}
 
 /* ---------- Responsive ---------- */
 @media (max-width:900px){
-  .market-grid{grid-template-columns:1fr}
+  .market-grid{grid-template-columns:repeat(2,1fr)}
   .hero .wrap{grid-template-columns:1fr;gap:2.2rem}
   .portrait{max-width:360px;margin:0 auto}
   .about .wrap,.contact .wrap{grid-template-columns:1fr;gap:2rem}
@@ -263,6 +263,6 @@ footer.site a:hover{color:var(--accent);text-decoration:underline}
   .menu-toggle{display:block}
   header.site .wrap{position:relative}
   .util .states{display:none}
-  .cards,.steps,.foot-grid{grid-template-columns:1fr}
+  .cards,.steps,.foot-grid,.market-grid{grid-template-columns:1fr}
   .nav-cta .btn.ghost{display:none}
 }
