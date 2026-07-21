@@ -1,0 +1,104 @@
+==========================================================
+  GOOGLE SEARCH CONSOLE SETUP  (get Stef's site into Google)
+  Site: https://www.callmyfriendstef.com
+==========================================================
+
+Google Search Console (free) is how you tell Google your site
+exists, submit your sitemap, and watch which searches bring
+people in. Do this once the site is live on your real domain.
+
+Two things happen here:
+  A) Verify you own the site
+  B) Submit the sitemap
+Then Google starts crawling and ranking your pages.
+
+----------------------------------------------------------
+PART A — CREATE THE ACCOUNT & VERIFY
+----------------------------------------------------------
+
+1. Go to https://search.google.com/search-console and sign in
+   with the Google account you want to manage this from
+   (using the same Google account as the Business Profile is
+   handy but not required).
+
+2. Click "Add property." You'll see two choices:
+
+   >>> RECOMMENDED (easiest for us): "URL prefix"
+       - Type exactly:  https://www.callmyfriendstef.com
+       - Click Continue.
+       - Choose the "HTML tag" verification method.
+       - Google shows a line that looks like:
+           <meta name="google-site-verification" content="XXXXXXXX" />
+       - COPY that whole line and send it to Kyle/Claude.
+         We'll paste it into the site's <head> and push it
+         live (takes 1 minute).
+       - Once it's live, come back and click "Verify."
+
+   Alternative (no code needed, but needs domain login):
+   >>> "Domain" property
+       - Type:  callmyfriendstef.com
+       - Google gives you a TXT record to add at your domain
+         registrar (wherever the domain is registered) or in
+         Netlify's DNS settings.
+       - Add the TXT record, wait a few minutes, click Verify.
+       - This one verifies the whole domain (www + non-www).
+
+   (Netlify note: if Netlify manages your DNS, you can also add
+   the TXT record under Netlify > Domains > DNS records.)
+
+----------------------------------------------------------
+PART B — SUBMIT THE SITEMAP
+----------------------------------------------------------
+
+3. Once verified, in the left menu click "Sitemaps."
+
+4. Under "Add a new sitemap," type:
+        sitemap.xml
+   (the box already shows https://www.callmyfriendstef.com/ —
+    you only type "sitemap.xml")  then click Submit.
+
+5. It should say "Success." Google now knows about all pages:
+        /                              (home)
+        /kennewick-mortgage-broker.html
+        /portland-mortgage-broker.html
+        /texas-mortgage-broker.html
+
+----------------------------------------------------------
+PART C — GIVE IT A NUDGE (optional but helpful)
+----------------------------------------------------------
+
+6. Use the search bar at the very top ("Inspect any URL").
+   Paste https://www.callmyfriendstef.com/ and click
+   "Request Indexing." Repeat for each of the 3 location pages.
+   This asks Google to crawl them sooner.
+
+----------------------------------------------------------
+WHAT TO EXPECT
+----------------------------------------------------------
+- Indexing takes a few days to a couple weeks. Be patient.
+- After a week or two, "Performance" shows the search terms
+  people used to find the site and where you rank.
+- "Pages" (Indexing) shows which pages Google has indexed and
+  flags any problems.
+
+----------------------------------------------------------
+TWO QUICK EXTRAS
+----------------------------------------------------------
+- TEST RICH RESULTS: paste any page into
+  https://search.google.com/test/rich-results to preview the
+  star rating, FAQ, and breadcrumbs Google can show.
+
+- BING (optional, 5 min): https://www.bing.com/webmasters
+  lets you "Import from Google Search Console" in one click.
+  Bing also feeds some AI assistants (Copilot), so it's worth it.
+
+----------------------------------------------------------
+DON'T FORGET
+----------------------------------------------------------
+- Google Business Profile is the #1 driver for local "near me"
+  searches. Keep its name/address/phone identical to the site:
+      Simmons | Mortgage Broker
+      6 N Everett Street, Kennewick, WA 99336
+      (503) 481-7866
+- Keep collecting Google reviews. More recent 5-star reviews =
+  higher local ranking + stronger social proof on the site.
