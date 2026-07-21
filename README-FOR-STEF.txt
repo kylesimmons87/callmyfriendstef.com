@@ -28,14 +28,15 @@ but it'll look and read much better once we add them)
    the Sam's Saloon site; it's now in the hero. If you have a higher-res
    version than 500x500, send it and I'll swap it for extra sharpness.
 
-3. COMPLIANCE / DISCLOSURES — partly done.
-   - Legal Disclaimer page (legal.html): DONE, using Barrett Financial's
-     published legal-disclaimer language.
-   - Privacy Policy page (privacy.html): DONE, using Barrett Financial's
-     published privacy policy language.
-   - Still to confirm with Barrett compliance: the short footer
-     disclosures, corporate address, and the official Equal Housing
-     Opportunity logo. The footer flags this.
+3. COMPLIANCE / DISCLOSURES — DONE. Barrett Financial has greenlit the
+   site.
+   - Legal Disclaimer page (legal.html): Barrett's published language.
+   - Privacy Policy page (privacy.html): Barrett's published language.
+   - Footer carries NMLS #1607894 (Stef) and #181106 (Barrett),
+     licensed states, Equal Housing Opportunity, and NMLS Consumer
+     Access link.
+   (If Barrett ever supplies an official Equal Housing Opportunity logo
+   image to use instead of the current mark, send it and I'll swap it.)
 
 4. LOAN PRODUCTS — I listed the common ones (Conventional, FHA, VA,
    USDA, Jumbo, Refinance). Confirm which you actually want featured.
