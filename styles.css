@@ -190,6 +190,19 @@ footer.site a:hover{color:var(--accent);text-decoration:underline}
 .compliance p{margin:0 0 .7rem}
 .compliance .flag{background:#2a2a2a;border-left:3px solid #fff;padding:.7rem .9rem;border-radius:6px;color:#e7e5e0}
 
+/* ---------- Reviews trust band ---------- */
+.reviews-band{background:var(--ink);color:#fff;text-align:center;padding:3rem 0}
+.reviews-band .stars{color:var(--accent);font-size:1.5rem;letter-spacing:.15em;line-height:1}
+.reviews-band .rating-line{display:flex;align-items:center;justify-content:center;gap:.7rem;flex-wrap:wrap;margin:.6rem 0 .3rem}
+.reviews-band .score{font-family:"Fraunces",serif;font-size:2.4rem;font-weight:600;line-height:1}
+.reviews-band .count{font-size:1.05rem;color:#dcdad5}
+.reviews-band .count strong{color:#fff}
+.reviews-band p.sub{color:#b9b7b2;max-width:46ch;margin:.4rem auto 1.4rem;font-size:.98rem}
+.reviews-band .btn.ghost{color:#fff;border-color:#fff}
+.reviews-band .btn.ghost:hover{background:#fff;color:var(--ink)}
+.reviews-band .g{font-weight:700}
+.reviews-band .g .b{color:#4285F4}.reviews-band .g .r{color:#EA4335}.reviews-band .g .y{color:#FBBC05}.reviews-band .g .g2{color:#34A853}
+
 /* ---------- Areas served ---------- */
 .market-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem}
 .market{border:1px solid var(--line);border-radius:var(--radius);padding:1.6rem;background:var(--paper)}
