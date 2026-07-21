@@ -24,9 +24,9 @@ but it'll look and read much better once we add them)
 1. LOGO — the actual file didn't come through in the message.
    Send the PNG/SVG and I'll swap the text "Simmons" logo for it.
 
-2. HEADSHOT — same thing, didn't attach. The hero currently shows a
-   black placeholder box that says "Headshot goes here." Send the photo
-   and I'll drop it in.
+2. HEADSHOT — DONE. Pulled Stef's professional headshot (stef.jpg) from
+   the Sam's Saloon site; it's now in the hero. If you have a higher-res
+   version than 500x500, send it and I'll swap it for extra sharpness.
 
 3. COMPLIANCE / DISCLOSURES — the footer has a placeholder block.
    Barrett Financial's marketing/compliance team almost certainly needs
