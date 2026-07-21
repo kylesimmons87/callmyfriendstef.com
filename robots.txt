@@ -1,5 +1,7 @@
 User-agent: *
 Allow: /
 Disallow: /privacy.html
+Disallow: /legal.html
+Disallow: /thanks.html
 
 Sitemap: https://www.callmyfriendstef.com/sitemap.xml

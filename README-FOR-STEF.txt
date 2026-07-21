@@ -28,11 +28,15 @@ but it'll look and read much better once we add them)
    the Sam's Saloon site; it's now in the hero. If you have a higher-res
    version than 500x500, send it and I'll swap it for extra sharpness.
 
-3. COMPLIANCE / DISCLOSURES — the footer has a placeholder block.
-   Barrett Financial's marketing/compliance team almost certainly needs
-   to approve the site AND will give you the exact required footer text,
-   the official Equal Housing Opportunity logo, and any corporate
-   address/licensing lines. Get those and we'll replace the placeholder.
+3. COMPLIANCE / DISCLOSURES — partly done.
+   - Legal Disclaimer page (legal.html): DONE, using Barrett Financial's
+     published legal-disclaimer language.
+   - Privacy Policy page (privacy.html): still a DRAFT starter. The
+     privacy screenshots didn't come through -- send Barrett's actual
+     privacy policy text and I'll swap it in.
+   - Still to confirm with Barrett compliance: the short footer
+     disclosures, corporate address, and the official Equal Housing
+     Opportunity logo. The footer flags this.
 
 4. LOAN PRODUCTS — I listed the common ones (Conventional, FHA, VA,
    USDA, Jumbo, Refinance). Confirm which you actually want featured.
