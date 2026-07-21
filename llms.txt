@@ -29,6 +29,10 @@
 - Jumbo loans
 - Refinancing and cash-out refinance
 - HELOCs and down-payment assistance programs
+- Bank statement loans (for self-employed borrowers; qualify with bank statements instead of tax returns)
+- ITIN loans (for borrowers without a Social Security number)
+- DSCR loans (for real estate investors; qualify on the property's rental income)
+- Other non-QM and asset-based loan programs
 
 ## Pages
 - Home: https://www.callmyfriendstef.com/
