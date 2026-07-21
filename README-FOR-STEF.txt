@@ -64,12 +64,44 @@ THINGS ALREADY WIRED UP FROM YOUR ANSWERS
   • States:  OR, WA, ID, AZ, TX, WY shown throughout
 
 --------------------------------------------------------
-HOW THE CONTACT FORM WORKS
+HOW THE CONTACT FORM WORKS  (get messages to your email)
 --------------------------------------------------------
 The contact form uses Netlify Forms (same as the restaurant site).
-Once deployed on Netlify, submissions show up in the Netlify dashboard.
-In Netlify → Forms → Notifications, add an email notification to
-simmons@barrettfinancial.com so messages land in your inbox.
+After submitting, visitors see a friendly "Thanks!" page (thanks.html).
+
+To make messages land in your inbox:
+  1. Deploy the site on Netlify (connect this GitHub repo).
+  2. Netlify auto-detects the form.
+  3. Netlify dashboard -> your site -> Forms -> Form notifications
+     -> Add notification -> Email notification.
+  4. Recipient: simmons@barrettfinancial.com  -> Save.
+All submissions are also stored in the Netlify dashboard as a backup.
+(This only works once the site is LIVE on Netlify -- not from the
+local preview file.)
+
+BOOKING A CALL: the "Book a Call" buttons go to Calendly
+(calendly.com/steftalks). Calendly emails you directly -- just make
+sure the email on your Calendly account is the one you want alerts at,
+and connect your Google Calendar so booked calls show up automatically.
+
+--------------------------------------------------------
+GOOGLE REVIEWS WIDGET (Elfsight)
+--------------------------------------------------------
+The "What clients are saying" section uses an Elfsight Google Reviews
+widget (your live 5.0 / 31 reviews, auto-updating). It's already
+embedded in the site. To manage it (change layout, colors, how many
+reviews show), log in at elfsight.com and edit that widget -- changes
+apply automatically, no code needed.
+
+--------------------------------------------------------
+DEPLOYING / GOING LIVE (quick version)
+--------------------------------------------------------
+  1. Netlify.com -> Add new site -> Import from GitHub -> pick this repo.
+  2. Build command: (leave blank)   Publish directory: .
+     (A netlify.toml in the repo already sets this.)
+  3. After it deploys, add the custom domain www.callmyfriendstef.com
+     (Netlify -> Domain settings) -- free HTTPS is automatic.
+  4. Set up the form email notification (see above).
 
 --------------------------------------------------------
 TO PREVIEW IT

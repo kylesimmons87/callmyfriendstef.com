@@ -1,0 +1,19 @@
+# Netlify configuration — static site, no build step.
+[build]
+  publish = "."
+
+# Sensible security headers (kept non-restrictive so Google Fonts,
+# Elfsight reviews, and Calendly all load fine).
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    X-Frame-Options = "SAMEORIGIN"
+    Permissions-Policy = "geolocation=(), microphone=(), camera=()"
+
+# Cache static assets aggressively.
+[[headers]]
+  for = "/*.css"
+  [headers.values]
+    Cache-Control = "public, max-age=604800"

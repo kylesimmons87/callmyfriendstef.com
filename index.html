@@ -153,6 +153,7 @@
         <li><a href="#about">About</a></li>
         <li><a href="#loans">Loan Options</a></li>
         <li><a href="#areas">Areas Served</a></li>
+        <li><a href="#reviews">Reviews</a></li>
         <li><a href="#faq">FAQ</a></li>
         <li><a href="#contact">Contact</a></li>
         <li class="nav-cta">
@@ -205,6 +206,19 @@
     </div>
     <p class="sub">See why homebuyers across Washington, Oregon &amp; Texas trust Stef with their home financing.</p>
     <a class="btn ghost" href="https://www.google.com/maps/search/?api=1&amp;query=Simmons%20Mortgage%20Broker%20Kennewick%20WA" target="_blank" rel="noopener">Read Google Reviews →</a>
+  </div>
+</section>
+
+<!-- ═══ REVIEWS (Elfsight Google Reviews widget) ═══ -->
+<section class="reviews alt" id="reviews">
+  <div class="wrap">
+    <div class="section-head" style="text-align:center;margin-left:auto;margin-right:auto">
+      <p class="eyebrow">In Their Words</p>
+      <h2>What clients are saying</h2>
+      <p style="color:var(--muted)">Real reviews from homebuyers across Washington, Oregon &amp; Texas.</p>
+    </div>
+    <!-- Elfsight Google Reviews | Untitled Google Reviews 3 -->
+    <div class="elfsight-app-15fa0b0e-a320-42cc-95b8-94616b785cd8" data-elfsight-app-lazy></div>
   </div>
 </section>
 
@@ -348,7 +362,7 @@
     </div>
 
     <!-- Netlify form: submissions appear in the Netlify dashboard; set up email notifications to simmons@barrettfinancial.com there. -->
-    <form class="cg" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" style="position:relative">
+    <form class="cg" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/thanks.html" style="position:relative">
       <input type="hidden" name="form-name" value="contact">
       <p class="hp"><label>Leave this empty: <input name="bot-field"></label></p>
       <label for="c-name">Name</label>
@@ -418,6 +432,9 @@
     </div>
   </div>
 </footer>
+
+<!-- Elfsight platform — loads the Google Reviews widget in the Reviews section -->
+<script src="https://elfsightcdn.com/platform.js" async></script>
 
 </body>
 </html>
