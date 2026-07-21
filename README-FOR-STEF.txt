@@ -89,6 +89,23 @@ sure the email on your Calendly account is the one you want alerts at,
 and connect your Google Calendar so booked calls show up automatically.
 
 --------------------------------------------------------
+GET A QUOTE PAGE  (get-a-quote.html)
+--------------------------------------------------------
+New page with two lead-capture tools, both powered by Netlify Forms:
+  1. "Request a rate quote" -- borrower fills in loan details.
+  2. "Beat my Loan Estimate" -- borrower UPLOADS their current Loan
+     Estimate (PDF or photo) for Stef to review.
+Both email you the same way as the contact form once notifications
+are set up (Netlify -> Forms -> add email notification for the
+"rate-quote" and "beat-estimate" forms, not just "contact").
+Uploaded files appear with each submission in the Netlify dashboard.
+Note: Netlify's free tier caps form submissions/uploads per month;
+if volume gets high, bump the Netlify plan.
+Both forms carry "this is not a loan application" disclaimers. Since
+they collect borrower info, it's worth a quick heads-up to Barrett
+compliance that these lead forms exist.
+
+--------------------------------------------------------
 GOOGLE REVIEWS WIDGET (Elfsight)
 --------------------------------------------------------
 The "What clients are saying" section uses an Elfsight Google Reviews
