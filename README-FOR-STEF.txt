@@ -31,9 +31,8 @@ but it'll look and read much better once we add them)
 3. COMPLIANCE / DISCLOSURES — partly done.
    - Legal Disclaimer page (legal.html): DONE, using Barrett Financial's
      published legal-disclaimer language.
-   - Privacy Policy page (privacy.html): still a DRAFT starter. The
-     privacy screenshots didn't come through -- send Barrett's actual
-     privacy policy text and I'll swap it in.
+   - Privacy Policy page (privacy.html): DONE, using Barrett Financial's
+     published privacy policy language.
    - Still to confirm with Barrett compliance: the short footer
      disclosures, corporate address, and the official Equal Housing
      Opportunity logo. The footer flags this.
