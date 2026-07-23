@@ -201,8 +201,9 @@ form.cg .hp{position:absolute;left:-9999px}
 .calc .fields{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-top:1.2rem}
 .calc .fields.one{grid-template-columns:1fr}
 .calc label{display:block;font-size:.85rem;font-weight:600;margin-bottom:.3rem}
-.calc input{width:100%;padding:.7rem .8rem;border:1px solid var(--line);border-radius:10px;font:inherit;color:var(--ink);background:#fff}
+.calc input{width:100%;padding:.85rem .95rem;border:1.5px solid var(--line);border-radius:12px;font:inherit;font-size:1.05rem;color:var(--ink);background:#fff}
 .calc input:focus{outline:2px solid var(--ink);border-color:var(--ink)}
+.calc .fields label{font-size:.9rem}
 .calc .result{margin-top:1.5rem;padding:1.4rem 1.5rem;background:var(--ink);color:#fff;border-radius:12px}
 .calc .result .label{font-size:.8rem;text-transform:uppercase;letter-spacing:.12em;color:#b9b7b2}
 .calc .result .big{font-family:"Fraunces",serif;font-size:2.4rem;line-height:1.1;color:var(--accent);margin:.2rem 0 .8rem}
@@ -216,11 +217,12 @@ form.cg .hp{position:absolute;left:-9999px}
 .cfield{margin-bottom:1.25rem}
 .cfield-top{display:flex;justify-content:space-between;align-items:center;gap:1rem;margin-bottom:.55rem;flex-wrap:wrap}
 .cfield-top label{font-weight:600;font-size:.95rem;margin:0}
-.cfield .cval{display:inline-flex;align-items:center;gap:.15rem;font-weight:600}
-.cfield .cval .pre{color:var(--muted)}
-.cfield .cval input{width:130px;text-align:right;padding:.45rem .55rem;border:1px solid var(--line);border-radius:8px;font:inherit;font-weight:600;color:var(--ink);background:#fff}
-.cfield .cval input:focus{outline:2px solid var(--ink);border-color:var(--ink)}
-.calc input[type=range]{width:100%;accent-color:var(--accent);height:6px;cursor:pointer;margin:0}
+.cfield .cval{display:inline-flex;align-items:center;gap:.2rem;border:1.5px solid var(--line);border-radius:12px;background:#fff;padding:0 .85rem;min-width:150px;justify-content:flex-end}
+.cfield .cval:focus-within{outline:2px solid var(--ink);border-color:var(--ink)}
+.cfield .cval .pre{color:var(--muted);font-weight:600;font-size:1.05rem}
+.cfield .cval input{width:118px;text-align:right;border:0;background:transparent;padding:.72rem .1rem;font:inherit;font-size:1.15rem;font-weight:700;color:var(--ink)}
+.cfield .cval input:focus{outline:none}
+.calc input[type=range]{width:100%;accent-color:var(--accent);height:6px;cursor:pointer;margin:0;padding:0;border:0}
 .cfield .hint{font-size:.78rem;color:var(--muted);margin:.35rem 0 0}
 .seg{display:inline-flex;border:1px solid var(--line);border-radius:8px;overflow:hidden}
 .seg button{border:0;background:#fff;padding:.4rem .8rem;font:inherit;font-weight:600;font-size:.85rem;cursor:pointer;color:var(--muted)}
