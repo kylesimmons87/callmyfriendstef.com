@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mortgage Calculators | Stef Simmons, Mortgage Broker</title>
+<meta name="description" content="Free mortgage calculators: estimate your monthly payment, see how much home you can afford, and find out how much extra payments could save you. By Stef Simmons, NMLS #1607894.">
+<meta name="theme-color" content="#111111">
+<link rel="canonical" href="https://www.callmyfriendstef.com/mortgage-calculator.html">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..600;1,9..144,400..500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<meta property="og:title" content="Mortgage Calculators — Stef Simmons">
+<meta property="og:description" content="Estimate your monthly payment, what you can afford, and what extra payments could save you.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.callmyfriendstef.com/mortgage-calculator.html">
+<meta property="og:image" content="https://www.callmyfriendstef.com/stef.jpg">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Mortgage Calculators by Stef Simmons",
+  "url": "https://www.callmyfriendstef.com/mortgage-calculator.html",
+  "applicationCategory": "FinanceApplication",
+  "operatingSystem": "Any",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "provider": { "@type": "MortgageBroker", "name": "Simmons | Mortgage Broker", "telephone": "+1-503-481-7866" }
+}
+</script>
+</head>
+<body>
+
+<div class="util">
+  <div class="wrap">
+    <a href="tel:15034817866">☎ (503) 481-7866</a>
+    <span class="states">Independent Mortgage Broker · Backed by Barrett Financial Group</span>
+  </div>
+</div>
+
+<header class="site">
+  <div class="wrap">
+    <a class="brand" href="index.html">
+      <span class="name">Simmons</span>
+      <span class="sub">Mortgage&nbsp;Broker</span>
+    </a>
+    <button class="menu-toggle" aria-label="Menu" aria-expanded="false" onclick="var n=document.getElementById('nav');n.classList.toggle('open');this.setAttribute('aria-expanded',n.classList.contains('open'))">☰</button>
+    <nav class="main" id="nav" aria-label="Main">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="index.html#loans">Loan Options</a></li>
+        <li><a href="index.html#faq">FAQ</a></li>
+        <li><a href="get-a-quote.html">Get a Quote</a></li>
+        <li class="nav-cta"><a class="btn solid small" href="sms:+15034817866">💬 Text Me</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<section class="calc-intro">
+  <div class="wrap">
+    <p class="eyebrow">Free Tools · No Sign-Up</p>
+    <h1>Mortgage calculators</h1>
+    <p class="lead">Play with the numbers before you talk to anyone. Estimate a monthly payment, see how much home you could afford, or find out what a little extra each month could save you. When you're ready for real numbers, just text me.</p>
+    <div class="calc-tabs" role="tablist">
+      <button class="calc-tab on" data-tab="payment" role="tab">Monthly Payment</button>
+      <button class="calc-tab" data-tab="afford" role="tab">Affordability</button>
+      <button class="calc-tab" data-tab="extra" role="tab">Extra Payment</button>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top:2.5rem">
+  <div class="wrap">
+
+    <!-- PAYMENT -->
+    <div class="calc" id="calc-payment">
+      <h2>Estimate your monthly payment</h2>
+      <p style="color:var(--muted);font-size:.95rem">See your estimated principal &amp; interest, plus taxes and insurance.</p>
+      <div class="fields">
+        <div><label for="p-price">Home price ($)</label><input id="p-price" type="number" value="400000"></div>
+        <div><label for="p-down">Down payment ($)</label><input id="p-down" type="number" value="80000"></div>
+        <div><label for="p-rate">Interest rate (%)</label><input id="p-rate" type="number" step="0.01" value="6.5"></div>
+        <div><label for="p-term">Loan term (years)</label><input id="p-term" type="number" value="30"></div>
+        <div><label for="p-tax">Property tax / year ($)</label><input id="p-tax" type="number" value="3600"></div>
+        <div><label for="p-ins">Home insurance / year ($)</label><input id="p-ins" type="number" value="1200"></div>
+      </div>
+      <div class="result">
+        <div class="label">Estimated monthly payment</div>
+        <div class="big" id="p-total">$0</div>
+        <div class="row"><span>Loan amount</span><span id="p-loan">$0</span></div>
+        <div class="row"><span>Principal &amp; interest</span><span id="p-pi">$0</span></div>
+        <div class="row"><span>Taxes &amp; insurance</span><span id="p-ti">$0</span></div>
+      </div>
+      <p class="disclaimer">Estimate for educational purposes only. Does not include PMI/MI, HOA dues, or other costs, and is not a loan quote, pre-approval, or commitment to lend. Actual rates, payments, and terms depend on a full review of your credit, income, and property.</p>
+    </div>
+
+    <!-- AFFORDABILITY -->
+    <div class="calc" id="calc-afford" hidden>
+      <h2>How much home can you afford?</h2>
+      <p style="color:var(--muted);font-size:.95rem">A rough estimate based on your income, debts, and down payment.</p>
+      <div class="fields">
+        <div><label for="a-income">Annual income ($)</label><input id="a-income" type="number" value="90000"></div>
+        <div><label for="a-debts">Monthly debts ($)</label><input id="a-debts" type="number" value="500"></div>
+        <div><label for="a-down">Down payment ($)</label><input id="a-down" type="number" value="40000"></div>
+        <div><label for="a-rate">Interest rate (%)</label><input id="a-rate" type="number" step="0.01" value="6.5"></div>
+        <div><label for="a-term">Loan term (years)</label><input id="a-term" type="number" value="30"></div>
+      </div>
+      <div class="result">
+        <div class="label">Estimated home price you could afford</div>
+        <div class="big" id="a-price">$0</div>
+        <div class="row"><span>Estimated loan amount</span><span id="a-loan">$0</span></div>
+        <div class="row"><span>Estimated total monthly payment</span><span id="a-pay">$0</span></div>
+      </div>
+      <p class="disclaimer">A simplified estimate using common debt-to-income guidelines; it reserves part of your budget for taxes and insurance. Lenders and loan programs vary. This is not a pre-approval or commitment to lend — for a real number, let's talk.</p>
+    </div>
+
+    <!-- EXTRA PAYMENT -->
+    <div class="calc" id="calc-extra" hidden>
+      <h2>What could extra payments save you?</h2>
+      <p style="color:var(--muted);font-size:.95rem">See how paying a little more each month shortens your loan and cuts interest.</p>
+      <div class="fields">
+        <div><label for="e-loan">Loan amount ($)</label><input id="e-loan" type="number" value="320000"></div>
+        <div><label for="e-rate">Interest rate (%)</label><input id="e-rate" type="number" step="0.01" value="6.5"></div>
+        <div><label for="e-term">Loan term (years)</label><input id="e-term" type="number" value="30"></div>
+        <div><label for="e-extra">Extra per month ($)</label><input id="e-extra" type="number" value="200"></div>
+      </div>
+      <div class="result">
+        <div class="label">Total interest saved</div>
+        <div class="big" id="e-saved">$0</div>
+        <div class="row"><span>Time cut off your loan</span><span id="e-time">0</span></div>
+        <div class="row"><span>Normal monthly payment</span><span id="e-base">$0</span></div>
+        <div class="row"><span>New payment with extra</span><span id="e-new">$0</span></div>
+      </div>
+      <p class="disclaimer">Estimate for educational purposes only; assumes a fixed rate and consistent extra payments. Confirm there is no prepayment penalty on your loan.</p>
+    </div>
+
+    <div class="calc-cta">
+      <p style="color:var(--muted);margin-bottom:1rem">Numbers looking good? Let's turn them into a real plan.</p>
+      <div class="btn-row" style="display:flex;gap:.8rem;justify-content:center;flex-wrap:wrap">
+        <a class="btn solid" href="get-a-quote.html">Get a Rate Quote</a>
+        <a class="btn ghost" href="sms:+15034817866">💬 Text Me</a>
+        <a class="btn ghost" href="https://calendly.com/steftalks" target="_blank" rel="noopener">Book a Call</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<footer class="site">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <span class="name">Simmons</span>
+        <p>Mortgage Broker backed by<br>Barrett Financial Group, LLC</p>
+        <p><a href="tel:15034817866">(503) 481-7866</a><br><a href="mailto:simmons@barrettfinancial.com">simmons@barrettfinancial.com</a></p>
+        <div class="eho" title="Equal Housing Opportunity">
+          <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><rect x="1.5" y="1.5" width="21" height="21" rx="2"/><path d="M5 12l7-5 7 5"/><path d="M7 11.5V17h10v-5.5"/></svg>
+          <span>Equal Housing<br>Opportunity</span>
+        </div>
+      </div>
+      <div>
+        <h4>Explore</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="index.html#loans">Loan Options</a></li>
+          <li><a href="mortgage-calculator.html">Calculators</a></li>
+          <li><a href="get-a-quote.html">Get a Rate Quote</a></li>
+          <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Get Started</h4>
+        <ul>
+          <li><a href="sms:+15034817866">Text Me</a></li>
+          <li><a href="https://181106.my1003app.com/1607894/register?time=1760137949455" target="_blank" rel="noopener">Apply Online</a></li>
+          <li><a href="https://calendly.com/steftalks" target="_blank" rel="noopener">Book a Call</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="compliance">
+      <p><strong>Stef Simmons</strong> · NMLS #1607894 &nbsp;|&nbsp; <strong>Barrett Financial Group, LLC</strong> · NMLS #181106 (<a href="https://www.nmlsconsumeraccess.org/EntityDetails.aspx/INDIVIDUAL/1607894" target="_blank" rel="noopener">NMLS Consumer Access</a>)</p>
+      <p>Licensed to originate loans in: Oregon, Washington, Idaho, Arizona, Texas &amp; Wyoming. This is not a commitment to lend. All loans are subject to credit approval, income verification, and property appraisal. Rates, terms, and programs are subject to change without notice. See our <a href="legal.html">Legal Disclaimer</a> and <a href="privacy.html">Privacy Policy</a>.</p>
+      <p>© 2026 Simmons Mortgage. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+  (function(){var nav=document.getElementById('nav');var toggle=document.querySelector('.menu-toggle');if(nav){nav.querySelectorAll('a').forEach(function(link){link.addEventListener('click',function(){nav.classList.remove('open');if(toggle)toggle.setAttribute('aria-expanded','false');});});}})();
+
+  var usd=function(n){ if(!isFinite(n)||n<0)n=0; return '$'+Math.round(n).toLocaleString('en-US'); };
+  var num=function(id){ var v=parseFloat(document.getElementById(id).value); return isFinite(v)?v:0; };
+  function pmt(principal, annualRate, years){
+    var r=annualRate/100/12, n=Math.round(years*12);
+    if(n<=0) return 0;
+    if(r===0) return principal/n;
+    return principal*r*Math.pow(1+r,n)/(Math.pow(1+r,n)-1);
+  }
+
+  function calcPayment(){
+    var price=num('p-price'), down=num('p-down'), rate=num('p-rate'), term=num('p-term');
+    var loan=Math.max(price-down,0);
+    var pi=pmt(loan,rate,term);
+    var ti=(num('p-tax')+num('p-ins'))/12;
+    document.getElementById('p-loan').textContent=usd(loan);
+    document.getElementById('p-pi').textContent=usd(pi);
+    document.getElementById('p-ti').textContent=usd(ti);
+    document.getElementById('p-total').textContent=usd(pi+ti);
+  }
+
+  function calcAfford(){
+    var income=num('a-income'), debts=num('a-debts'), down=num('a-down'), rate=num('a-rate'), term=num('a-term');
+    var gross=income/12;
+    // front-end 28% of gross, back-end 43% of gross minus other debts — take the lower
+    var maxPiti=Math.min(0.28*gross, 0.43*gross-debts);
+    if(maxPiti<0)maxPiti=0;
+    // reserve ~20% of the housing budget for taxes/insurance; remainder is P&I
+    var piBudget=maxPiti*0.8;
+    var r=rate/100/12, n=Math.round(term*12);
+    var factor=(r===0)?(1/n):(r*Math.pow(1+r,n)/(Math.pow(1+r,n)-1));
+    var loan=(factor>0)?piBudget/factor:0;
+    var price=loan+down;
+    document.getElementById('a-loan').textContent=usd(loan);
+    document.getElementById('a-pay').textContent=usd(maxPiti);
+    document.getElementById('a-price').textContent=usd(price);
+  }
+
+  function calcExtra(){
+    var loan=num('e-loan'), rate=num('e-rate'), term=num('e-term'), extra=num('e-extra');
+    var r=rate/100/12, n=Math.round(term*12);
+    var base=pmt(loan,rate,term);
+    document.getElementById('e-base').textContent=usd(base);
+    document.getElementById('e-new').textContent=usd(base+extra);
+    var baseInterest=base*n-loan;
+    // simulate with extra
+    var bal=loan, months=0, interestPaid=0, pay=base+extra, guard=0;
+    if(r===0){ months=Math.ceil(loan/pay); interestPaid=0; }
+    else{
+      while(bal>0 && guard<1000){
+        var interest=bal*r;
+        var principal=pay-interest;
+        if(principal<=0){ months=Infinity; break; }
+        bal-=principal; interestPaid+=interest; months++; guard++;
+        if(bal<0){ interestPaid+=bal*0; }
+      }
+    }
+    var saved=baseInterest-interestPaid;
+    var monthsSaved=n-months;
+    document.getElementById('e-saved').textContent=usd(saved>0?saved:0);
+    if(isFinite(monthsSaved) && monthsSaved>0){
+      var yrs=Math.floor(monthsSaved/12), mos=monthsSaved%12;
+      document.getElementById('e-time').textContent=(yrs?yrs+' yr ':'')+(mos?mos+' mo':'')||'—';
+    } else { document.getElementById('e-time').textContent='—'; }
+  }
+
+  function recalcAll(){ calcPayment(); calcAfford(); calcExtra(); }
+  document.querySelectorAll('.calc input').forEach(function(i){ i.addEventListener('input', recalcAll); });
+
+  // tabs
+  document.querySelectorAll('.calc-tab').forEach(function(t){
+    t.addEventListener('click', function(){
+      document.querySelectorAll('.calc-tab').forEach(function(x){x.classList.remove('on');});
+      t.classList.add('on');
+      document.getElementById('calc-payment').hidden = t.dataset.tab!=='payment';
+      document.getElementById('calc-afford').hidden  = t.dataset.tab!=='afford';
+      document.getElementById('calc-extra').hidden   = t.dataset.tab!=='extra';
+    });
+  });
+
+  recalcAll();
+</script>
+
+</body>
+</html>
