@@ -116,6 +116,7 @@
         <div class="cfield-top">
           <label>Loan term</label>
           <span class="term-btns" id="p-term-btns">
+            <button type="button" data-term="10">10 yr</button>
             <button type="button" data-term="15">15 yr</button>
             <button type="button" data-term="20">20 yr</button>
             <button type="button" data-term="30" class="on">30 yr</button>
@@ -132,9 +133,13 @@
 
       <div class="result">
         <div class="label">Estimated monthly payment</div>
-        <div class="big" id="p-total">$0</div>
-        <div class="breakdown-bar" id="p-bar" aria-hidden="true"></div>
-        <ul class="breakdown-legend" id="p-legend"></ul>
+        <div class="donut-wrap">
+          <div class="donut">
+            <svg id="p-donut" viewBox="0 0 120 120" aria-hidden="true"></svg>
+            <div class="donut-center"><span class="lbl">Per month</span><span class="donut-total" id="p-total">$0</span></div>
+          </div>
+          <ul class="breakdown-legend" id="p-legend"></ul>
+        </div>
       </div>
       <p class="disclaimer">Estimate for educational purposes only. PMI applies only when your down payment is under 20% and varies by loan; this is not a loan quote, pre-approval, or commitment to lend. Actual rates, payments, and terms depend on a full review of your credit, income, and property.</p>
     </div>
@@ -252,16 +257,20 @@
       {n:'PMI',v:pmiM,c:'#6b7280'},
       {n:'HOA',v:hoaM,c:'#e8ebee'}
     ];
-    var bar=document.getElementById('p-bar'), leg=document.getElementById('p-legend');
-    bar.innerHTML=''; leg.innerHTML='';
+    var svg=document.getElementById('p-donut'), leg=document.getElementById('p-legend');
+    var C=2*Math.PI*54; // circumference, r=54
+    var ring='<circle cx="60" cy="60" r="54" fill="none" stroke="#2a2a2a" stroke-width="13"></circle>';
+    var start=0; leg.innerHTML='';
     comps.forEach(function(x){
       if(x.v<=0) return;
-      var pct=total>0?(x.v/total*100):0;
-      var s=document.createElement('span'); s.style.width=pct+'%'; s.style.background=x.c; bar.appendChild(s);
+      var len=(total>0?x.v/total:0)*C;
+      ring+='<circle cx="60" cy="60" r="54" fill="none" stroke="'+x.c+'" stroke-width="13" stroke-dasharray="'+len+' '+(C-len)+'" stroke-dashoffset="'+(-start)+'" transform="rotate(-90 60 60)" stroke-linecap="butt"></circle>';
+      start+=len;
       var li=document.createElement('li');
       li.innerHTML='<span class="dot" style="background:'+x.c+'"></span>'+x.n+'<span class="amt">'+usd(x.v)+'</span>';
       leg.appendChild(li);
     });
+    svg.innerHTML=ring;
   }
 
   function configureDownSlider(){
@@ -288,7 +297,7 @@
     var taxM=num('p-tax')/12, insM=num('p-ins')/12, hoaM=num('p-hoa');
     var pmiM=(downPct<20)?loan*num('p-pmi')/100/12:0;
     var total=pi+taxM+insM+hoaM+pmiM;
-    document.getElementById('p-total').textContent=usd(total)+'/mo';
+    document.getElementById('p-total').textContent=usd(total);
     renderBreakdown(pi,taxM,insM,pmiM,hoaM,total);
   }
 
