@@ -78,23 +78,65 @@
     <!-- PAYMENT -->
     <div class="calc" id="calc-payment">
       <h2>Estimate your monthly payment</h2>
-      <p style="color:var(--muted);font-size:.95rem">See your estimated principal &amp; interest, plus taxes and insurance.</p>
+      <p style="color:var(--muted);font-size:.95rem">Drag the sliders and watch your payment update instantly.</p>
+
+      <div class="cfield">
+        <div class="cfield-top">
+          <label for="p-price">Home price</label>
+          <span class="cval"><span class="pre">$</span><input id="p-price" type="number" value="400000"></span>
+        </div>
+        <input type="range" id="p-price-r" min="50000" max="1500000" step="5000" value="400000" aria-label="Home price">
+      </div>
+
+      <div class="cfield">
+        <div class="cfield-top">
+          <label for="p-down">Down payment
+            <span class="seg" id="p-down-seg">
+              <button type="button" data-mode="dollar" class="on">$</button>
+              <button type="button" data-mode="percent">%</button>
+            </span>
+          </label>
+          <span class="cval"><span class="pre" id="p-down-pre">$</span><input id="p-down" type="number" value="80000"></span>
+        </div>
+        <input type="range" id="p-down-r" min="0" max="400000" step="1000" value="80000" aria-label="Down payment">
+        <p class="hint" id="p-down-hint">= 20% down</p>
+      </div>
+
+      <div class="loan-amt"><span>Loan amount</span><span id="p-loan">$320,000</span></div>
+
+      <div class="cfield">
+        <div class="cfield-top">
+          <label for="p-rate">Interest rate</label>
+          <span class="cval"><input id="p-rate" type="number" step="0.01" value="6.5"><span class="pre">%</span></span>
+        </div>
+        <input type="range" id="p-rate-r" min="2" max="12" step="0.05" value="6.5" aria-label="Interest rate">
+      </div>
+
+      <div class="cfield">
+        <div class="cfield-top">
+          <label>Loan term</label>
+          <span class="term-btns" id="p-term-btns">
+            <button type="button" data-term="15">15 yr</button>
+            <button type="button" data-term="20">20 yr</button>
+            <button type="button" data-term="30" class="on">30 yr</button>
+          </span>
+        </div>
+      </div>
+
       <div class="fields">
-        <div><label for="p-price">Home price ($)</label><input id="p-price" type="number" value="400000"></div>
-        <div><label for="p-down">Down payment ($)</label><input id="p-down" type="number" value="80000"></div>
-        <div><label for="p-rate">Interest rate (%)</label><input id="p-rate" type="number" step="0.01" value="6.5"></div>
-        <div><label for="p-term">Loan term (years)</label><input id="p-term" type="number" value="30"></div>
         <div><label for="p-tax">Property tax / year ($)</label><input id="p-tax" type="number" value="3600"></div>
         <div><label for="p-ins">Home insurance / year ($)</label><input id="p-ins" type="number" value="1200"></div>
+        <div><label for="p-pmi">PMI / year (% of loan)</label><input id="p-pmi" type="number" step="0.01" value="0.5"></div>
+        <div><label for="p-hoa">Monthly HOA ($)</label><input id="p-hoa" type="number" value="0"></div>
       </div>
+
       <div class="result">
         <div class="label">Estimated monthly payment</div>
         <div class="big" id="p-total">$0</div>
-        <div class="row"><span>Loan amount</span><span id="p-loan">$0</span></div>
-        <div class="row"><span>Principal &amp; interest</span><span id="p-pi">$0</span></div>
-        <div class="row"><span>Taxes &amp; insurance</span><span id="p-ti">$0</span></div>
+        <div class="breakdown-bar" id="p-bar" aria-hidden="true"></div>
+        <ul class="breakdown-legend" id="p-legend"></ul>
       </div>
-      <p class="disclaimer">Estimate for educational purposes only. Does not include PMI/MI, HOA dues, or other costs, and is not a loan quote, pre-approval, or commitment to lend. Actual rates, payments, and terms depend on a full review of your credit, income, and property.</p>
+      <p class="disclaimer">Estimate for educational purposes only. PMI applies only when your down payment is under 20% and varies by loan; this is not a loan quote, pre-approval, or commitment to lend. Actual rates, payments, and terms depend on a full review of your credit, income, and property.</p>
     </div>
 
     <!-- AFFORDABILITY -->
@@ -200,16 +242,98 @@
     return principal*r*Math.pow(1+r,n)/(Math.pow(1+r,n)-1);
   }
 
-  function calcPayment(){
-    var price=num('p-price'), down=num('p-down'), rate=num('p-rate'), term=num('p-term');
-    var loan=Math.max(price-down,0);
-    var pi=pmt(loan,rate,term);
-    var ti=(num('p-tax')+num('p-ins'))/12;
-    document.getElementById('p-loan').textContent=usd(loan);
-    document.getElementById('p-pi').textContent=usd(pi);
-    document.getElementById('p-ti').textContent=usd(ti);
-    document.getElementById('p-total').textContent=usd(pi+ti);
+  var pTerm=30, downMode='dollar';
+
+  function renderBreakdown(pi,taxM,insM,pmiM,hoaM,total){
+    var comps=[
+      {n:'Principal &amp; interest',v:pi,c:'#F0654F'},
+      {n:'Property tax',v:taxM,c:'#9aa0a6'},
+      {n:'Home insurance',v:insM,c:'#c7ccd1'},
+      {n:'PMI',v:pmiM,c:'#6b7280'},
+      {n:'HOA',v:hoaM,c:'#e8ebee'}
+    ];
+    var bar=document.getElementById('p-bar'), leg=document.getElementById('p-legend');
+    bar.innerHTML=''; leg.innerHTML='';
+    comps.forEach(function(x){
+      if(x.v<=0) return;
+      var pct=total>0?(x.v/total*100):0;
+      var s=document.createElement('span'); s.style.width=pct+'%'; s.style.background=x.c; bar.appendChild(s);
+      var li=document.createElement('li');
+      li.innerHTML='<span class="dot" style="background:'+x.c+'"></span>'+x.n+'<span class="amt">'+usd(x.v)+'</span>';
+      leg.appendChild(li);
+    });
   }
+
+  function configureDownSlider(){
+    var r=document.getElementById('p-down-r'), price=num('p-price');
+    if(downMode==='dollar'){ r.min=0; r.max=Math.max(price,10000); r.step=1000; }
+    else { r.min=0; r.max=100; r.step=0.5; }
+  }
+
+  function calcPayment(){
+    var price=num('p-price'), rate=num('p-rate');
+    var downDollar;
+    if(downMode==='dollar'){ downDollar=num('p-down'); }
+    else { downDollar=price*num('p-down')/100; }
+    if(downDollar<0)downDollar=0; if(downDollar>price)downDollar=price;
+    var downPct=price>0?downDollar/price*100:0;
+    var loan=price-downDollar;
+    document.getElementById('p-loan').textContent=usd(loan);
+    document.getElementById('p-down-hint').textContent = downMode==='dollar'
+      ? ('= '+(Math.round(downPct*10)/10)+'% down')
+      : ('= '+usd(downDollar)+' down');
+    var dr=document.getElementById('p-down-r');
+    if(downMode==='dollar'){ dr.value=Math.min(downDollar,parseFloat(dr.max)); } else { dr.value=downPct; }
+    var pi=pmt(loan,rate,pTerm);
+    var taxM=num('p-tax')/12, insM=num('p-ins')/12, hoaM=num('p-hoa');
+    var pmiM=(downPct<20)?loan*num('p-pmi')/100/12:0;
+    var total=pi+taxM+insM+hoaM+pmiM;
+    document.getElementById('p-total').textContent=usd(total)+'/mo';
+    renderBreakdown(pi,taxM,insM,pmiM,hoaM,total);
+  }
+
+  // slider <-> number binding for price & rate
+  function pair(numId,rangeId,after){
+    var n=document.getElementById(numId), r=document.getElementById(rangeId);
+    n.addEventListener('input',function(){ r.value=n.value; if(after)after(); calcPayment(); });
+    r.addEventListener('input',function(){ n.value=r.value; if(after)after(); calcPayment(); });
+  }
+  pair('p-price','p-price-r',configureDownSlider);
+  pair('p-rate','p-rate-r');
+
+  // down payment number + slider
+  document.getElementById('p-down').addEventListener('input', calcPayment);
+  document.getElementById('p-down-r').addEventListener('input', function(){
+    document.getElementById('p-down').value = (downMode==='dollar') ? Math.round(this.value) : this.value;
+    calcPayment();
+  });
+
+  // down payment $/% toggle
+  document.querySelectorAll('#p-down-seg button').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var price=num('p-price'), curDollar, curPct;
+      if(downMode==='dollar'){ curDollar=num('p-down'); curPct=price>0?curDollar/price*100:0; }
+      else { curPct=num('p-down'); curDollar=price*curPct/100; }
+      downMode=btn.dataset.mode;
+      document.querySelectorAll('#p-down-seg button').forEach(function(b){ b.classList.toggle('on',b===btn); });
+      document.getElementById('p-down-pre').textContent = downMode==='dollar' ? '$' : '';
+      configureDownSlider();
+      document.getElementById('p-down').value = (downMode==='dollar') ? Math.round(curDollar) : Math.round(curPct*10)/10;
+      calcPayment();
+    });
+  });
+
+  // loan term buttons
+  document.querySelectorAll('#p-term-btns button').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      pTerm=parseFloat(btn.dataset.term);
+      document.querySelectorAll('#p-term-btns button').forEach(function(b){ b.classList.toggle('on',b===btn); });
+      calcPayment();
+    });
+  });
+
+  // extra payment-tab fields
+  ['p-tax','p-ins','p-pmi','p-hoa'].forEach(function(id){ document.getElementById(id).addEventListener('input', calcPayment); });
 
   function calcAfford(){
     var income=num('a-income'), debts=num('a-debts'), down=num('a-down'), rate=num('a-rate'), term=num('a-term');
@@ -256,8 +380,8 @@
     } else { document.getElementById('e-time').textContent='—'; }
   }
 
-  function recalcAll(){ calcPayment(); calcAfford(); calcExtra(); }
-  document.querySelectorAll('.calc input').forEach(function(i){ i.addEventListener('input', recalcAll); });
+  document.querySelectorAll('#calc-afford input').forEach(function(i){ i.addEventListener('input', calcAfford); });
+  document.querySelectorAll('#calc-extra input').forEach(function(i){ i.addEventListener('input', calcExtra); });
 
   // tabs
   document.querySelectorAll('.calc-tab').forEach(function(t){
@@ -270,7 +394,8 @@
     });
   });
 
-  recalcAll();
+  configureDownSlider();
+  calcPayment(); calcAfford(); calcExtra();
 </script>
 
 </body>

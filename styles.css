@@ -212,6 +212,32 @@ form.cg .hp{position:absolute;left:-9999px}
 .calc-cta{text-align:center;margin-top:2rem}
 @media (max-width:560px){.calc .fields{grid-template-columns:1fr}}
 
+/* upgraded calculator fields: label + value + slider */
+.cfield{margin-bottom:1.25rem}
+.cfield-top{display:flex;justify-content:space-between;align-items:center;gap:1rem;margin-bottom:.55rem;flex-wrap:wrap}
+.cfield-top label{font-weight:600;font-size:.95rem;margin:0}
+.cfield .cval{display:inline-flex;align-items:center;gap:.15rem;font-weight:600}
+.cfield .cval .pre{color:var(--muted)}
+.cfield .cval input{width:130px;text-align:right;padding:.45rem .55rem;border:1px solid var(--line);border-radius:8px;font:inherit;font-weight:600;color:var(--ink);background:#fff}
+.cfield .cval input:focus{outline:2px solid var(--ink);border-color:var(--ink)}
+.calc input[type=range]{width:100%;accent-color:var(--accent);height:6px;cursor:pointer;margin:0}
+.cfield .hint{font-size:.78rem;color:var(--muted);margin:.35rem 0 0}
+.seg{display:inline-flex;border:1px solid var(--line);border-radius:8px;overflow:hidden}
+.seg button{border:0;background:#fff;padding:.4rem .8rem;font:inherit;font-weight:600;font-size:.85rem;cursor:pointer;color:var(--muted)}
+.seg button.on{background:var(--ink);color:#fff}
+.term-btns{display:inline-flex;gap:.4rem;flex-wrap:wrap}
+.term-btns button{border:1.5px solid var(--line);background:#fff;border-radius:8px;padding:.4rem .8rem;font:inherit;font-weight:600;font-size:.9rem;cursor:pointer;color:var(--ink)}
+.term-btns button.on{background:var(--ink);color:#fff;border-color:var(--ink)}
+.loan-amt{display:flex;justify-content:space-between;align-items:center;padding:.9rem 1.1rem;background:var(--paper-warm);border:1px solid var(--line);border-radius:10px;margin:.4rem 0 1.4rem;font-weight:600}
+.loan-amt span:last-child{font-family:"Fraunces",serif;font-size:1.3rem}
+.breakdown-bar{display:flex;height:18px;border-radius:9px;overflow:hidden;margin:1.1rem 0 1rem;background:#2a2a2a}
+.breakdown-bar span{height:100%;transition:width .2s ease}
+.breakdown-legend{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:.5rem 1.4rem}
+.breakdown-legend li{display:flex;align-items:center;gap:.5rem;font-size:.9rem;color:#dcdad5}
+.breakdown-legend .dot{width:11px;height:11px;border-radius:3px;flex:none}
+.breakdown-legend .amt{margin-left:auto;font-weight:600;color:#fff}
+@media (max-width:560px){.breakdown-legend{grid-template-columns:1fr}}
+
 /* ---------- Footer & compliance ---------- */
 footer.site{background:var(--ink);color:#dcdad5;padding:3.5rem 0 2rem;font-size:.9rem}
 footer.site a{color:#fff}
