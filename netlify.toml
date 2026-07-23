@@ -12,8 +12,9 @@
     X-Frame-Options = "SAMEORIGIN"
     Permissions-Policy = "geolocation=(), microphone=(), camera=()"
 
-# Cache static assets aggressively.
+# Always revalidate CSS so style updates show up immediately
+# (Netlify still returns a fast 304 when nothing changed).
 [[headers]]
   for = "/*.css"
   [headers.values]
-    Cache-Control = "public, max-age=604800"
+    Cache-Control = "public, max-age=0, must-revalidate"
