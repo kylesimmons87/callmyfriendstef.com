@@ -102,6 +102,19 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
+  "@type": "Person",
+  "@id": "https://www.callmyfriendstef.com/#stef",
+  "name": "Stef Simmons",
+  "jobTitle": "Mortgage Broker",
+  "identifier": "NMLS #1607894",
+  "image": "https://www.callmyfriendstef.com/stef.jpg",
+  "url": "https://www.callmyfriendstef.com/",
+  "worksFor": { "@id": "https://www.callmyfriendstef.com/#business" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
   "@type": "FAQPage",
   "mainEntity": [
     {
@@ -178,10 +191,10 @@
     <button class="menu-toggle" aria-label="Menu" aria-expanded="false" onclick="var n=document.getElementById('nav');n.classList.toggle('open');this.setAttribute('aria-expanded',n.classList.contains('open'))">☰</button>
     <nav class="main" id="nav" aria-label="Main">
       <ul>
-        <li><a href="#about">About</a></li>
-        <li><a href="#loans">Loan Options</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="loan-options.html">Loan Options</a></li>
         <li><a href="mortgage-calculator.html">Calculator</a></li>
-        <li><a href="#faq">FAQ</a></li>
+        <li><a href="faq.html">FAQ</a></li>
         <li><a href="#contact">Contact</a></li>
         <li class="nav-cta">
           <a class="btn solid small" href="https://181106.my1003app.com/1607894/register?time=1760137949455" target="_blank" rel="noopener">Apply Now</a>
@@ -260,7 +273,7 @@
       <blockquote>I believe getting a mortgage should feel personal — not transactional.</blockquote>
       <p class="signoff">— Stef Simmons, Mortgage Broker</p>
       <p style="color:var(--muted);font-size:.95rem">Backed by Barrett Financial Group, LLC — giving you access to a wide range of lenders and loan programs, so we can shop for the fit that's right for <em>you</em>.</p>
-      <a class="btn ghost small" href="#contact">Get in touch →</a>
+      <a class="btn ghost small" href="about.html">More about Stef →</a>
     </div>
   </div>
 </section>
@@ -274,12 +287,12 @@
       <p style="color:var(--muted)">Whether you're buying your first home, refinancing, or tapping equity — as a broker I can shop multiple lenders to find your best fit.</p>
     </div>
     <div class="cards">
-      <div class="card"><span class="ic">🏡</span><h3>Conventional</h3><p>Flexible options for buyers with solid credit and steady income.</p></div>
-      <div class="card"><span class="ic">🔑</span><h3>FHA</h3><p>Lower down payments and flexible credit — great for first-time buyers.</p></div>
-      <div class="card"><span class="ic">🎖️</span><h3>VA</h3><p>Zero-down financing and strong benefits for veterans and service members.</p></div>
-      <div class="card"><span class="ic">🌾</span><h3>USDA</h3><p>No-down-payment loans for eligible rural and suburban homes.</p></div>
-      <div class="card"><span class="ic">💎</span><h3>Jumbo</h3><p>Financing for higher-value homes above conventional limits.</p></div>
-      <div class="card"><span class="ic">🔄</span><h3>Refinance</h3><p>Lower your rate, change your term, or tap into your home's equity.</p></div>
+      <a class="card" href="conventional-loans.html" style="display:block"><span class="ic">🏡</span><h3>Conventional</h3><p>Flexible options for buyers with solid credit and steady income.</p><span class="go" style="color:var(--accent);font-weight:600;display:block;margin-top:.55rem">Learn more →</span></a>
+      <a class="card" href="fha-loans.html" style="display:block"><span class="ic">🔑</span><h3>FHA</h3><p>Lower down payments and flexible credit — great for first-time buyers.</p><span class="go" style="color:var(--accent);font-weight:600;display:block;margin-top:.55rem">Learn more →</span></a>
+      <a class="card" href="va-loans.html" style="display:block"><span class="ic">🎖️</span><h3>VA</h3><p>Zero-down financing and strong benefits for veterans and service members.</p><span class="go" style="color:var(--accent);font-weight:600;display:block;margin-top:.55rem">Learn more →</span></a>
+      <a class="card" href="usda-loans.html" style="display:block"><span class="ic">🌾</span><h3>USDA</h3><p>No-down-payment loans for eligible rural and suburban homes.</p><span class="go" style="color:var(--accent);font-weight:600;display:block;margin-top:.55rem">Learn more →</span></a>
+      <a class="card" href="jumbo-loans.html" style="display:block"><span class="ic">💎</span><h3>Jumbo</h3><p>Financing for higher-value homes above conventional limits.</p><span class="go" style="color:var(--accent);font-weight:600;display:block;margin-top:.55rem">Learn more →</span></a>
+      <a class="card" href="refinance.html" style="display:block"><span class="ic">🔄</span><h3>Refinance</h3><p>Lower your rate, change your term, or tap into your home's equity.</p><span class="go" style="color:var(--accent);font-weight:600;display:block;margin-top:.55rem">Learn more →</span></a>
     </div>
     <div class="section-head" style="margin-top:3.2rem">
       <p class="eyebrow">Self-Employed &amp; Investors</p>
@@ -287,11 +300,11 @@
       <p style="color:var(--muted)">Don't fit the traditional box? These programs are built for business owners, investors, and non-traditional borrowers.</p>
     </div>
     <div class="cards">
-      <div class="card"><span class="ic">🏦</span><h3>Bank Statement</h3><p>For self-employed borrowers — qualify using 12–24 months of bank statements instead of tax returns.</p></div>
-      <div class="card"><span class="ic">🪪</span><h3>ITIN</h3><p>Homeownership for borrowers who file taxes with an ITIN instead of a Social Security number.</p></div>
-      <div class="card"><span class="ic">🏘️</span><h3>DSCR</h3><p>For real estate investors — qualify on the property's rental income, not your personal income.</p></div>
+      <a class="card" href="bank-statement-loans.html" style="display:block"><span class="ic">🏦</span><h3>Bank Statement</h3><p>For self-employed borrowers — qualify using 12–24 months of bank statements instead of tax returns.</p><span class="go" style="color:var(--accent);font-weight:600;display:block;margin-top:.55rem">Learn more →</span></a>
+      <a class="card" href="itin-loans.html" style="display:block"><span class="ic">🪪</span><h3>ITIN</h3><p>Homeownership for borrowers who file taxes with an ITIN instead of a Social Security number.</p><span class="go" style="color:var(--accent);font-weight:600;display:block;margin-top:.55rem">Learn more →</span></a>
+      <a class="card" href="dscr-loans.html" style="display:block"><span class="ic">🏘️</span><h3>DSCR</h3><p>For real estate investors — qualify on the property's rental income, not your personal income.</p><span class="go" style="color:var(--accent);font-weight:600;display:block;margin-top:.55rem">Learn more →</span></a>
     </div>
-    <p class="form-note" style="text-align:left;margin-top:1.4rem">Also available: non-QM, asset-based, HELOCs, cash-out refinance, and down-payment assistance programs. Not sure what fits? <a href="get-a-quote.html">Get a quick quote →</a></p>
+    <p class="form-note" style="text-align:left;margin-top:1.4rem">Also available: non-QM, asset-based, HELOCs, cash-out refinance, and down-payment assistance programs. <a href="loan-options.html">See all loan options →</a> &nbsp;·&nbsp; Not sure what fits? <a href="get-a-quote.html">Get a quick quote →</a></p>
   </div>
 </section>
 
@@ -362,6 +375,7 @@
       <summary>How is a mortgage broker different from a bank?</summary>
       <p>Instead of a single bank's products, I work with many lenders and compare their rates and programs on your behalf — so you get options, not just one institution's answer.</p>
     </details>
+    <p class="areas-note" style="text-align:center;margin-top:1.8rem"><a href="faq.html">See all frequently asked questions →</a></p>
   </div>
 </section>
 
@@ -433,12 +447,12 @@
       <div>
         <h4>Explore</h4>
         <ul>
-          <li><a href="#about">About</a></li>
-          <li><a href="#loans">Loan Options</a></li>
-          <li><a href="#process">How It Works</a></li>
-          <li><a href="#contact">Contact</a></li>
+          <li><a href="about.html">About Stef</a></li>
+          <li><a href="loan-options.html">Loan Options</a></li>
           <li><a href="mortgage-calculator.html">Mortgage Calculators</a></li>
+          <li><a href="faq.html">FAQ</a></li>
           <li><a href="get-a-quote.html">Get a Rate Quote</a></li>
+          <li><a href="#contact">Contact</a></li>
           <li><a href="legal.html">Legal Disclaimer</a></li>
           <li><a href="privacy.html">Privacy Policy</a></li>
         </ul>
