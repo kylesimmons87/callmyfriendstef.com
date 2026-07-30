@@ -109,7 +109,7 @@ compliance that these lead forms exist.
 GOOGLE REVIEWS WIDGET (Elfsight)
 --------------------------------------------------------
 The "What clients are saying" section uses an Elfsight Google Reviews
-widget (your live 5.0 / 31 reviews, auto-updating). It's already
+widget (your live 5.0 Google rating and review count, auto-updating). It's already
 embedded in the site. To manage it (change layout, colors, how many
 reviews show), log in at elfsight.com and edit that widget -- changes
 apply automatically, no code needed.
