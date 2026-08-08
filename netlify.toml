@@ -18,3 +18,10 @@
   for = "/*.css"
   [headers.values]
     Cache-Control = "public, max-age=0, must-revalidate"
+
+# Canonicalize the homepage URL
+[[redirects]]
+  from = "/index.html"
+  to = "/"
+  status = 301
+  force = true
