@@ -52,6 +52,8 @@
 </head>
 <body>
 
+<a class="skip-link" href="#main-content">Skip to main content</a>
+
 <div class="util">
   <div class="wrap">
     <a href="tel:15034817866">☎ (503) 481-7866</a>
@@ -62,7 +64,7 @@
 <header class="site">
   <div class="wrap">
     <a class="brand" href="/"><span class="name">Simmons</span> <span class="sub">Mortgage&nbsp;Broker</span></a>
-    <button class="menu-toggle" aria-label="Menu" aria-expanded="false" onclick="var n=document.getElementById('nav');n.classList.toggle('open');this.setAttribute('aria-expanded',n.classList.contains('open'))">☰</button>
+    <button class="menu-toggle" aria-label="Menu" aria-expanded="false" aria-controls="nav" onclick="var n=document.getElementById('nav');n.classList.toggle('open');this.setAttribute('aria-expanded',n.classList.contains('open'))">☰</button>
     <nav class="main" id="nav" aria-label="Main">
       <ul>
         <li><a href="/">Home</a></li>
@@ -74,6 +76,8 @@
     </nav>
   </div>
 </header>
+
+<main id="main-content">
 
 <div class="calc-intro">
   <div class="wrap">
@@ -101,6 +105,7 @@
     <div class="section-head" style="margin-top:2.4rem;margin-bottom:1rem"><h2>Working with a broker</h2></div>
     <details><summary>How is a mortgage broker different from a bank?</summary><p>Instead of a single bank's products, I work with many lenders and compare their rates and programs on your behalf — so you get options, not just one institution's answer.</p></details>
     <details><summary>Is there any cost or obligation to get a quote?</summary><p>No. Getting a quote, texting me, or using the calculators is free and no-obligation. You're never committed until you choose to move forward.</p></details>
+    <p class="form-note" style="text-align:left;margin-top:1.8rem"><strong>Last reviewed: August 2026.</strong> This page is general education, not financial advice or a commitment to lend.</p>
   </div>
 </section>
 
@@ -125,6 +130,8 @@
     </div>
   </div>
 </section>
+
+</main>
 
 <footer class="site">
   <div class="wrap">

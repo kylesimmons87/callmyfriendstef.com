@@ -33,6 +33,8 @@
 </head>
 <body>
 
+<a class="skip-link" href="#main-content">Skip to main content</a>
+
 <div class="util">
   <div class="wrap">
     <a href="tel:15034817866">☎ (503) 481-7866</a>
@@ -43,7 +45,7 @@
 <header class="site">
   <div class="wrap">
     <a class="brand" href="/"><span class="name">Simmons</span> <span class="sub">Mortgage&nbsp;Broker</span></a>
-    <button class="menu-toggle" aria-label="Menu" aria-expanded="false" onclick="var n=document.getElementById('nav');n.classList.toggle('open');this.setAttribute('aria-expanded',n.classList.contains('open'))">☰</button>
+    <button class="menu-toggle" aria-label="Menu" aria-expanded="false" aria-controls="nav" onclick="var n=document.getElementById('nav');n.classList.toggle('open');this.setAttribute('aria-expanded',n.classList.contains('open'))">☰</button>
     <nav class="main" id="nav" aria-label="Main">
       <ul>
         <li><a href="/">Home</a></li>
@@ -56,6 +58,8 @@
   </div>
 </header>
 
+<main id="main-content">
+
 <div class="hero">
   <div class="wrap">
     <div>
@@ -65,7 +69,7 @@
       <p class="lead">I believe getting a mortgage should feel personal — not transactional. As an independent broker, my job is to find you a great rate and make the whole process feel human.</p>
       <div class="btn-row"><a class="btn solid" href="get-a-quote.html">Get a Rate Quote</a><a class="btn ghost" href="sms:+15034817866">💬 Text Me</a></div>
     </div>
-    <div class="portrait"><img src="stef.jpg" alt="Stef Simmons, mortgage broker" width="500" height="500"></div>
+    <div class="portrait"><img src="stef.jpg" fetchpriority="high" alt="Stef Simmons, mortgage broker" width="500" height="500"></div>
   </div>
 </div>
 
@@ -106,6 +110,8 @@
     </div>
   </div>
 </section>
+
+</main>
 
 <footer class="site">
   <div class="wrap">

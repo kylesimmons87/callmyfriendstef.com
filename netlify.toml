@@ -8,6 +8,12 @@
   for = "/*"
   [headers.values]
     X-Content-Type-Options = "nosniff"
+    Strict-Transport-Security = "max-age=15552000; includeSubDomains"
+    # CSP in Report-Only while the domain allowlist is confirmed against the live
+    # Elfsight widget + GA. Flip the header name to Content-Security-Policy once
+    # the browser console shows no violations. (frame-ancestors is only honored
+    # in the enforced header; X-Frame-Options covers framing until then.)
+    Content-Security-Policy-Report-Only = "default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://elfsightcdn.com https://static.elfsight.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://*.google-analytics.com https://analytics.google.com https://stats.g.doubleclick.net https://*.elfsight.com https://elfsightcdn.com; frame-src https://*.elfsight.com https://www.google.com; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'self'"
     Referrer-Policy = "strict-origin-when-cross-origin"
     X-Frame-Options = "SAMEORIGIN"
     Permissions-Policy = "geolocation=(), microphone=(), camera=()"

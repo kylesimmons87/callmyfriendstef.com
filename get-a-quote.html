@@ -51,6 +51,8 @@
 </head>
 <body>
 
+<a class="skip-link" href="#main-content">Skip to main content</a>
+
 <div class="util">
   <div class="wrap">
     <a href="tel:15034817866">☎ (503) 481-7866</a>
@@ -64,7 +66,7 @@
       <span class="name">Simmons</span>
       <span class="sub">Mortgage&nbsp;Broker</span>
     </a>
-    <button class="menu-toggle" aria-label="Menu" aria-expanded="false" onclick="var n=document.getElementById('nav');n.classList.toggle('open');this.setAttribute('aria-expanded',n.classList.contains('open'))">☰</button>
+    <button class="menu-toggle" aria-label="Menu" aria-expanded="false" aria-controls="nav" onclick="var n=document.getElementById('nav');n.classList.toggle('open');this.setAttribute('aria-expanded',n.classList.contains('open'))">☰</button>
     <nav class="main" id="nav" aria-label="Main">
       <ul>
         <li><a href="/">Home</a></li>
@@ -77,12 +79,15 @@
   </div>
 </header>
 
+<main id="main-content">
+
 <!-- ═══ INTRO ═══ -->
 <section class="quote-intro">
   <div class="wrap">
     <p class="eyebrow">No Pressure · No Obligation</p>
     <h1>Get a rate quote — or let me beat your current one</h1>
     <p class="lead">Two easy ways to start: tell me a little about your goals for a personalized quote, or upload the Loan Estimate you already have and I'll see if I can do better. As an independent broker, I shop multiple lenders on your behalf.</p>
+    <p style="color:var(--muted);font-size:.92rem;max-width:62ch">These forms are for quotes and questions only. When you’re ready to move forward, the actual loan application and all financial documents go through <strong>Barrett Financial’s secure online application portal</strong> — not this website.</p>
     <div class="quote-jump">
       <a class="btn solid" href="#rate-quote">Get a Rate Quote</a>
       <a class="btn ghost" href="#beat-estimate">Beat My Loan Estimate</a>
@@ -104,11 +109,11 @@
       <p class="hp"><label>Leave this empty: <input name="bot-field"></label></p>
 
       <div class="row2">
-        <div><label for="rq-name">Name</label><input id="rq-name" name="name" type="text" autocomplete="name" required></div>
-        <div><label for="rq-phone">Phone</label><input id="rq-phone" name="phone" type="tel" autocomplete="tel"></div>
+        <div><label for="rq-name">Name</label><input id="rq-name" name="name" maxlength="100" type="text" autocomplete="name" required></div>
+        <div><label for="rq-phone">Phone</label><input id="rq-phone" name="phone" maxlength="30" type="tel" autocomplete="tel"></div>
       </div>
       <label for="rq-email">Email</label>
-      <input id="rq-email" name="email" type="email" autocomplete="email" required>
+      <input id="rq-email" name="email" maxlength="254" type="email" autocomplete="email" required>
 
       <div class="row2">
         <div>
@@ -122,13 +127,13 @@
         </div>
         <div>
           <label for="rq-state">Property location</label>
-          <input id="rq-state" name="property_location" type="text" placeholder="City &amp; state">
+          <input id="rq-state" name="property_location" maxlength="120" type="text" placeholder="City &amp; state">
         </div>
       </div>
 
       <div class="row2">
-        <div><label for="rq-price">Estimated home price / value</label><input id="rq-price" name="home_price" type="text" inputmode="numeric" placeholder="$"></div>
-        <div><label for="rq-down">Down payment / equity</label><input id="rq-down" name="down_payment" type="text" placeholder="$ or %"></div>
+        <div><label for="rq-price">Estimated home price / value</label><input id="rq-price" name="home_price" maxlength="20" type="text" inputmode="numeric" placeholder="$"></div>
+        <div><label for="rq-down">Down payment / equity</label><input id="rq-down" name="down_payment" maxlength="20" type="text" placeholder="$ or %"></div>
       </div>
 
       <div class="row2">
@@ -155,10 +160,10 @@
       </div>
 
       <label for="rq-msg">Anything else I should know? (optional)</label>
-      <textarea id="rq-msg" name="message"></textarea>
+      <textarea id="rq-msg" name="message" maxlength="2000"></textarea>
 
       <button class="btn solid" type="submit">Send My Quote Request</button>
-      <p class="disclaimer">This is a request for a rate estimate — not a loan application or a commitment to lend. Actual rates and terms depend on a full review of your credit, income, and property. By submitting, you agree to be contacted about your inquiry.</p>
+      <p class="disclaimer">This is a request for a rate estimate — not a loan application or a commitment to lend. Actual rates and terms depend on a full review of your credit, income, and property. By submitting, you agree to be contacted about your inquiry. <strong>Please don’t include Social Security numbers, account numbers, or financial documents in this form</strong> — loan documents are only collected through the secure application portal.</p>
     </form>
   </div>
 </section>
@@ -177,26 +182,29 @@
       <p class="hp"><label>Leave this empty: <input name="bot-field"></label></p>
 
       <div class="row2">
-        <div><label for="be-name">Name</label><input id="be-name" name="name" type="text" autocomplete="name" required></div>
-        <div><label for="be-phone">Phone</label><input id="be-phone" name="phone" type="tel" autocomplete="tel"></div>
+        <div><label for="be-name">Name</label><input id="be-name" name="name" maxlength="100" type="text" autocomplete="name" required></div>
+        <div><label for="be-phone">Phone</label><input id="be-phone" name="phone" maxlength="30" type="tel" autocomplete="tel"></div>
       </div>
       <label for="be-email">Email</label>
-      <input id="be-email" name="email" type="email" autocomplete="email" required>
+      <input id="be-email" name="email" maxlength="254" type="email" autocomplete="email" required>
 
       <label for="be-file">Your Loan Estimate (PDF or photo)</label>
       <input id="be-file" name="loan-estimate" type="file" accept=".pdf,.jpg,.jpeg,.png" required>
       <p class="field-hint">Accepted: PDF, JPG, or PNG, up to ~8 MB. A photo of the printed pages works fine too.</p>
 
       <label for="be-msg">Notes (optional)</label>
-      <textarea id="be-msg" name="message" placeholder="e.g. the rate you were quoted, your lender, or any questions"></textarea>
+      <textarea id="be-msg" name="message" maxlength="2000" placeholder="e.g. the rate you were quoted, your lender, or any questions"></textarea>
 
       <button class="btn solid" type="submit">Upload &amp; Send to Stef</button>
+      <p class="disclaimer"><strong>Upload only your Loan Estimate</strong> (PDF or photo, up to 8 MB). Feel free to black out any account numbers first. Please don’t send bank statements, tax returns, W-2s, IDs, or anything with a Social Security number through this form — those documents belong in the secure application portal, which Stef will set you up with.</p>
       <p class="disclaimer">Uploading your Loan Estimate does not create a loan application or a commitment to lend, and does not obligate you to anything. I'll review what you send and follow up. Please avoid including sensitive numbers like your full Social Security number.</p>
     </form>
   </div>
 </section>
 
 <!-- ═══ FOOTER ═══ -->
+</main>
+
 <footer class="site">
   <div class="wrap">
     <div class="foot-grid">

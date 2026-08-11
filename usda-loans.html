@@ -51,6 +51,8 @@
 </head>
 <body>
 
+<a class="skip-link" href="#main-content">Skip to main content</a>
+
 <div class="util">
   <div class="wrap">
     <a href="tel:15034817866">☎ (503) 481-7866</a>
@@ -61,7 +63,7 @@
 <header class="site">
   <div class="wrap">
     <a class="brand" href="/"><span class="name">Simmons</span> <span class="sub">Mortgage&nbsp;Broker</span></a>
-    <button class="menu-toggle" aria-label="Menu" aria-expanded="false" onclick="var n=document.getElementById('nav');n.classList.toggle('open');this.setAttribute('aria-expanded',n.classList.contains('open'))">☰</button>
+    <button class="menu-toggle" aria-label="Menu" aria-expanded="false" aria-controls="nav" onclick="var n=document.getElementById('nav');n.classList.toggle('open');this.setAttribute('aria-expanded',n.classList.contains('open'))">☰</button>
     <nav class="main" id="nav" aria-label="Main">
       <ul>
         <li><a href="/">Home</a></li>
@@ -73,6 +75,8 @@
     </nav>
   </div>
 </header>
+
+<main id="main-content">
 
 <div class="hero">
   <div class="wrap">
@@ -87,7 +91,7 @@
       </div>
       <p style="margin-top:1.2rem"><a href="loan-options.html">← All loan options</a></p>
     </div>
-    <div class="portrait"><img src="stef.jpg" alt="Stef Simmons, mortgage broker" width="500" height="500"></div>
+    <div class="portrait"><img src="stef.jpg" fetchpriority="high" alt="Stef Simmons, mortgage broker" width="500" height="500"></div>
   </div>
 </div>
 
@@ -146,6 +150,8 @@
     </div>
   </div>
 </section>
+
+</main>
 
 <footer class="site">
   <div class="wrap">

@@ -1,0 +1,107 @@
+========================================================
+LOCAL AUTHORITY & BACKLINK PLAN — SIMMONS MORTGAGE
+For Kyle & Stef · August 2026
+========================================================
+Goal: make Stef the obvious, well-referenced answer for
+"mortgage broker" searches in her licensed states — using only
+legitimate, relationship-based links. No purchased links, no
+private blog networks, no directory spam. Ever.
+
+The golden rule for everything below: NAP consistency.
+Every profile must use EXACTLY:
+  Simmons | Mortgage Broker
+  6 N Everett Street, Kennewick, WA 99336
+  (503) 481-7866
+  https://www.callmyfriendstef.com
+  NMLS #1607894 · Barrett Financial Group, LLC NMLS #181106
+
+--------------------------------------------------------
+TIER 1 — DO THESE FIRST (biggest impact, free)
+--------------------------------------------------------
+1. GOOGLE BUSINESS PROFILE (you already have it — optimize it)
+   - Primary category: "Mortgage broker". Add secondary:
+     "Mortgage lender" only if accurate per Barrett guidance.
+   - Fill Services: Conventional, FHA, VA, USDA, Jumbo, Refinance,
+     Bank statement, ITIN, DSCR (mirror the site's loan pages).
+   - Set service areas: Tri-Cities + the licensed states.
+   - Website link: https://www.callmyfriendstef.com
+   - Add photos (Stef, office, closings-with-permission).
+   - Post monthly (rate-environment explainers, first-time-buyer tips).
+   - Reviews: keep the ask-at-closing habit; reply to every review.
+     Never incentivize reviews — just ask.
+   - Seed the Q&A section with real FAQs (broker vs bank, etc).
+
+2. NMLS CONSUMER ACCESS
+   - Verify the record for #1607894 lists current employer,
+     locations, and states. It's the trust anchor the site's
+     schema already points to (sameAs).
+
+3. BARRETT FINANCIAL DIRECTORY
+   - Ask Barrett to link Stef's loan-officer profile page to
+     callmyfriendstef.com. A link from the parent company's
+     domain is the single most natural link she can get.
+
+4. CORE PROFILES (free, high-trust, reviews matter)
+   - Zillow lender profile (+ port reviews there)
+   - Yelp, Bing Places, Apple Business Connect
+   - LinkedIn (site link in Contact + Featured)
+   - Facebook business page, Instagram bio link
+   - Nextdoor business page (Tri-Cities neighborhoods)
+
+--------------------------------------------------------
+TIER 2 — LOCAL & INDUSTRY (memberships, real relationships)
+--------------------------------------------------------
+5. CHAMBERS & LOCAL ORGS (membership = directory listing + events)
+   - Tri-City Regional Chamber of Commerce
+   - Pasco Chamber / West Richland & Richland chambers
+   - Historic Downtown Kennewick Partnership
+   - Visit Tri-Cities partner listing
+6. INDUSTRY DIRECTORIES & ASSOCIATIONS
+   - Scotsman Guide directory
+   - Association of Independent Mortgage Experts / NAMB
+     (membership pages link to member sites)
+   - Washington & Oregon mortgage/broker association rosters
+7. PARTNER SITES (ask; links must be earned/natural)
+   - Realtor partners: "preferred lender" or team pages
+   - Homebuilder preferred-lender lists
+   - Title/escrow partner resource pages
+   - Financial planners / CPAs who refer clients
+8. COMMUNITY
+   - Sponsor youth sports, school events, nonprofit fundraisers —
+     sponsor pages usually link.
+   - Host free first-time-homebuyer workshops (library, community
+     college, employer lunch-and-learns). Event listings link.
+
+--------------------------------------------------------
+TIER 3 — CONTENT & MEDIA (compounding authority)
+--------------------------------------------------------
+9. LINKABLE ASSETS YOU ALREADY HAVE
+   - The mortgage calculator — pitch it to partner agents as a
+     tool to embed/link in their buyer guides.
+   - The state pages (WA/OR/ID/TX/AZ/WY) — relocation guides
+     agents in each state can reference.
+10. LOCAL MEDIA & EXPERT QUOTES
+   - Tri-Cities Business News / Tri-City Herald: offer plain-
+     English commentary when rates move.
+   - HARO / Qwoted / Help a B2B Writer: answer journalist queries
+     as "independent mortgage broker" — national links accrue.
+11. GUEST EDUCATION (not guest-post spam)
+   - Partner agent blogs/newsletters: "broker vs bank",
+     "reading your Loan Estimate" pieces with a bio link.
+
+--------------------------------------------------------
+AS PROFILES GO LIVE → TELL THE SITE
+--------------------------------------------------------
+Send Kyle/Claude the URLs of: Google Business Profile share link,
+Zillow, LinkedIn, Facebook, chamber pages. They get added to the
+site's sameAs schema so Google/AI systems connect every profile
+to the same Stef Simmons entity.
+
+--------------------------------------------------------
+NEVER DO
+--------------------------------------------------------
+- Buying links, link exchanges "for SEO", PBNs
+- Mass directory submissions to junk directories
+- Incentivized or gated reviews
+- Duplicate GBP listings or fake addresses in other cities
+========================================================

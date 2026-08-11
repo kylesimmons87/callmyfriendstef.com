@@ -11,7 +11,8 @@
   --paper-warm:#faf9f7;
   --line:#e6e4e0;
   --line-strong:#111111;
-  --accent:#F0654F;          /* Coral — the one brand accent. Change here to restyle site-wide. */
+  --accent:#F0654F;
+  --accent-text:#c2402b;   /* darker coral: 5.2:1 on white for AA text */          /* Coral — the one brand accent. Change here to restyle site-wide. */
   --accent-strong:#d84a34;   /* darker coral for hovers */
   --shadow:0 18px 50px rgba(17,17,17,.10);
   --radius:16px;
@@ -47,7 +48,7 @@ img{max-width:100%;display:block}
   letter-spacing:.18em;
   font-size:.74rem;
   font-weight:700;
-  color:var(--accent);
+  color:var(--accent-text);
   margin:0 0 .8rem;
 }
 
@@ -61,8 +62,8 @@ img{max-width:100%;display:block}
   transition:transform .15s ease,background .15s ease,color .15s ease;
   cursor:pointer;
 }
-.btn.solid{background:var(--accent);color:#fff;border-color:var(--accent)}
-.btn.solid:hover{transform:translateY(-2px);background:var(--accent-strong);border-color:var(--accent-strong)}
+.btn.solid{background:var(--accent-text);color:#fff;border-color:var(--accent-text)}
+.btn.solid:hover{transform:translateY(-2px);background:#a83520;border-color:#a83520}
 .btn.ghost{background:transparent;color:var(--ink)}
 .btn.ghost:hover{background:var(--ink);color:#fff;transform:translateY(-2px)}
 .btn.small{padding:.55rem 1.1rem;font-size:.9rem}
@@ -71,7 +72,7 @@ img{max-width:100%;display:block}
 .util{background:var(--ink);color:#fff;font-size:.86rem}
 .util .wrap{display:flex;justify-content:space-between;align-items:center;gap:1rem;padding-top:.5rem;padding-bottom:.5rem}
 .util a{color:#fff}
-.util a:hover{color:var(--accent);text-decoration:underline}
+.util a:hover{color:var(--accent-text);text-decoration:underline}
 .util .states{color:#c9c7c2;font-size:.8rem}
 
 /* ---------- Header ---------- */
@@ -87,7 +88,7 @@ header.site .wrap{display:flex;align-items:center;justify-content:space-between;
 .brand .sub{font-size:.72rem;text-transform:uppercase;letter-spacing:.14em;color:var(--muted)}
 nav.main ul{display:flex;gap:1.6rem;list-style:none;margin:0;padding:0;align-items:center}
 nav.main a{font-size:.95rem;font-weight:500;color:var(--ink-soft)}
-nav.main a:hover{color:var(--accent)}
+nav.main a:hover{color:var(--accent-text)}
 .nav-cta{display:flex;align-items:center;gap:.7rem}
 .menu-toggle{display:none;background:none;border:0;font-size:1.6rem;cursor:pointer;color:var(--ink)}
 
@@ -98,7 +99,7 @@ nav.main a:hover{color:var(--accent)}
 .hero .tagline{
   font-family:"Fraunces",serif;font-style:italic;
   font-size:clamp(1.3rem,2.6vw,1.7rem);
-  color:var(--accent);margin:.2rem 0 1.2rem;
+  color:var(--accent-text);margin:.2rem 0 1.2rem;
 }
 .hero .lead{font-size:1.12rem;color:var(--ink-soft);max-width:36ch}
 .hero .btn-row{display:flex;flex-wrap:wrap;gap:.8rem;margin-top:1.6rem}
@@ -173,7 +174,7 @@ form.cg textarea{min-height:120px;resize:vertical}
 form.cg .btn{margin-top:1.2rem;width:100%;justify-content:center}
 form.cg .hp{position:absolute;left:-9999px}
 .form-note{font-size:.78rem;color:var(--muted);margin-top:.9rem;text-align:center}
-.form-note a{color:var(--accent);font-weight:600}
+.form-note a{color:var(--accent-text);font-weight:600}
 .form-note a:hover{text-decoration:underline}
 
 /* ---------- Quote page ---------- */
@@ -223,6 +224,7 @@ form.cg .hp{position:absolute;left:-9999px}
 .cfield .cval .pre{color:var(--muted);font-weight:600;font-size:1.05rem}
 .cfield .cval input{width:128px;text-align:right;border:0;background:transparent;padding:.8rem .1rem;font:inherit;font-size:1.35rem;font-weight:700;color:var(--ink)}
 .cfield .cval input:focus{outline:none}
+.cfield .cval:focus-within{border-color:var(--accent);box-shadow:0 0 0 3px rgba(240,101,79,.28)}
 .calc input[type=range]{width:100%;accent-color:var(--accent);height:6px;cursor:pointer;margin:0;padding:0;border:0}
 .cfield .hint{font-size:.78rem;color:var(--muted);margin:.35rem 0 0}
 .seg{display:inline-flex;border:1px solid var(--line);border-radius:8px;overflow:hidden}
@@ -287,7 +289,7 @@ footer.site a:hover{color:var(--accent);text-decoration:underline}
 .market h3{display:flex;align-items:center;gap:.5rem;margin-bottom:.5rem}
 .market .cities{color:var(--muted);font-size:.96rem;margin:0}
 .market .cities strong{color:var(--ink);font-weight:600}
-.market .cities a,.areas-note a{color:var(--accent);font-weight:600}
+.market .cities a,.areas-note a{color:var(--accent-text);font-weight:600}
 .market .cities a:hover,.areas-note a:hover{text-decoration:underline}
 .areas-note{color:var(--muted);font-size:.9rem;margin-top:1.6rem}
 
@@ -300,7 +302,7 @@ footer.site a:hover{color:var(--accent);text-decoration:underline}
   font-family:"Fraunces",serif;font-size:1.18rem;font-weight:600;color:var(--ink);
 }
 .faq summary::-webkit-details-marker{display:none}
-.faq summary:hover{color:var(--accent)}
+.faq summary:hover{color:var(--accent-text)}
 .faq summary::after{content:"+";font-size:1.5rem;color:var(--accent);transition:transform .2s ease;line-height:1}
 .faq details[open] summary::after{content:"–"}
 .faq details p{color:var(--ink-soft);margin:.9rem 0 0;max-width:72ch}
@@ -329,3 +331,11 @@ footer.site a:hover{color:var(--accent);text-decoration:underline}
   .cards,.steps,.foot-grid,.market-grid{grid-template-columns:1fr}
   .nav-cta .btn.ghost{display:none}
 }
+
+/* ---------- Accessibility ---------- */
+.skip-link{position:absolute;left:-9999px;top:0;background:var(--ink);color:#fff;padding:.6rem 1.1rem;border-radius:0 0 10px 0;z-index:2000;font-weight:600}
+.skip-link:focus{left:0}
+
+/* in-text links must be distinguishable by more than color (WCAG 1.4.1) */
+.compliance a,.form-note a,.areas-note a,.market .cities a,.disclaimer a{text-decoration:underline}
+main p a:not(.btn){text-decoration:underline}
