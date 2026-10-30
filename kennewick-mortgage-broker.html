@@ -32,7 +32,7 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "MortgageBroker",
+  "@type": "FinancialService",
   "@id": "https://www.callmyfriendstef.com/#business",
   "name": "Simmons | Mortgage Broker",
   "image": "https://www.callmyfriendstef.com/stef.jpg",
@@ -88,7 +88,7 @@
   "url": "https://www.callmyfriendstef.com/kennewick-mortgage-broker.html",
   "name": "Mortgage Broker in Kennewick & the Tri-Cities, WA | Simmons",
   "description": "Local mortgage broker in Kennewick, WA serving Pasco, Richland & the Tri-Cities. FHA, VA, USDA, conventional & refinance loans. 5.0★ · NMLS #1607894.",
-  "dateModified": "2026-08-11",
+  "dateModified": "2026-10-30",
   "inLanguage": "en-US",
   "about": {
     "@id": "https://www.callmyfriendstef.com/#business"
@@ -195,12 +195,12 @@
       <h2>Loan options for Tri-Cities buyers</h2>
     </div>
     <div class="cards">
-      <div class="card"><span class="ic">🏡</span><h3>Conventional</h3><p>Flexible options for buyers with solid credit and steady income.</p></div>
-      <div class="card"><span class="ic">🔑</span><h3>FHA</h3><p>Lower down payments and flexible credit — great for first-time buyers.</p></div>
-      <div class="card"><span class="ic">🎖️</span><h3>VA</h3><p>Zero-down financing and strong benefits for veterans and service members.</p></div>
-      <div class="card"><span class="ic">🌾</span><h3>USDA</h3><p>No-down-payment loans for eligible areas around the Tri-Cities.</p></div>
-      <div class="card"><span class="ic">💎</span><h3>Jumbo</h3><p>Financing for higher-value homes above conventional limits.</p></div>
-      <div class="card"><span class="ic">🔄</span><h3>Refinance</h3><p>Lower your rate, change your term, or tap into your home's equity.</p></div>
+      <a class="card" href="conventional-loans.html" style="display:block"><span class="ic">🏡</span><h3>Conventional</h3><p>Flexible options for buyers with solid credit and steady income.</p><span class="go" style="color:var(--accent-text);font-weight:600;display:block;margin-top:.55rem">Learn more →</span></a>
+      <a class="card" href="fha-loans.html" style="display:block"><span class="ic">🔑</span><h3>FHA</h3><p>Lower down payments and flexible credit — great for first-time buyers.</p><span class="go" style="color:var(--accent-text);font-weight:600;display:block;margin-top:.55rem">Learn more →</span></a>
+      <a class="card" href="va-loans.html" style="display:block"><span class="ic">🎖️</span><h3>VA</h3><p>Zero-down financing and strong benefits for veterans and service members.</p><span class="go" style="color:var(--accent-text);font-weight:600;display:block;margin-top:.55rem">Learn more →</span></a>
+      <a class="card" href="usda-loans.html" style="display:block"><span class="ic">🌾</span><h3>USDA</h3><p>No-down-payment loans for eligible areas around the Tri-Cities.</p><span class="go" style="color:var(--accent-text);font-weight:600;display:block;margin-top:.55rem">Learn more →</span></a>
+      <a class="card" href="jumbo-loans.html" style="display:block"><span class="ic">💎</span><h3>Jumbo</h3><p>Financing for higher-value homes above conventional limits.</p><span class="go" style="color:var(--accent-text);font-weight:600;display:block;margin-top:.55rem">Learn more →</span></a>
+      <a class="card" href="refinance.html" style="display:block"><span class="ic">🔄</span><h3>Refinance</h3><p>Lower your rate, change your term, or tap into your home's equity.</p><span class="go" style="color:var(--accent-text);font-weight:600;display:block;margin-top:.55rem">Learn more →</span></a>
     </div>
     <p class="form-note" style="text-align:left;margin-top:1.4rem">Also offering <strong>bank statement</strong>, <strong>ITIN</strong>, and <strong>DSCR</strong> (investor) loans, plus other non-QM programs. <a href="loan-options.html">See all loan options →</a></p>
   </div>
@@ -298,5 +298,15 @@
   (function(){var nav=document.getElementById('nav');var toggle=document.querySelector('.menu-toggle');if(!nav)return;nav.querySelectorAll('a').forEach(function(link){link.addEventListener('click',function(){nav.classList.remove('open');if(toggle)toggle.setAttribute('aria-expanded','false');});});})();
 </script>
 
+<script>(function(){document.addEventListener('click',function(e){
+  if(typeof gtag!=='function')return;
+  var a=e.target&&e.target.closest?e.target.closest('a[href]'):null; if(!a)return;
+  var h=a.getAttribute('href')||''; var pg=location.pathname;
+  if(h.indexOf('tel:')===0)gtag('event','contact_click',{channel:'phone',link_page:pg});
+  else if(h.indexOf('sms:')===0)gtag('event','contact_click',{channel:'text',link_page:pg});
+  else if(h.indexOf('mailto:')===0)gtag('event','contact_click',{channel:'email',link_page:pg});
+  else if(h.indexOf('calendly.com')>-1)gtag('event','appointment_click',{link_page:pg});
+  else if(h.indexOf('my1003app.com')>-1)gtag('event','application_click',{link_page:pg});
+});})();</script>
 </body>
 </html>

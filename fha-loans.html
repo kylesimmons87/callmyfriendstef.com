@@ -56,7 +56,7 @@
   "url": "https://www.callmyfriendstef.com/fha-loans.html",
   "name": "FHA Loans | Stef Simmons, Mortgage Broker",
   "description": "FHA loans explained — lower down payments, flexible credit, and what to expect. Independent mortgage broker Stef Simmons, NMLS #1607894.",
-  "dateModified": "2026-08-11",
+  "dateModified": "2026-10-30",
   "inLanguage": "en-US",
   "about": {
     "@id": "https://www.callmyfriendstef.com/#business"
@@ -128,6 +128,8 @@
       <li>FHA loans include mortgage insurance premiums (MIP); depending on your down payment, MIP may last the life of the loan</li>
       <li>The home generally must meet FHA property standards</li>
       <li>FHA loan limits vary by county and change over time</li>
+    
+      <li>FHA's mortgage insurance (MIP) works differently from conventional PMI: with less than 10% down it typically lasts the life of the loan, so many borrowers later refinance to a <a href="conventional-loans.html">conventional loan</a> to remove it</li>
     </ul>
     <h2 style="margin-top:2rem">What you'll typically need</h2>
     <ul>
@@ -136,7 +138,7 @@
       <li>Photo ID and details on your monthly debts</li>
     </ul>
     <p style="margin-top:1.6rem">Curious what the monthly payment might look like? Try my free <a href="mortgage-calculator.html">mortgage calculator</a>.</p>
-    <p class="form-note" style="text-align:left;margin-top:1.8rem"><strong>Last reviewed: July 2026.</strong> This page is general education, not a loan approval or commitment to lend; program details vary by lender and can change. Learn more from <a href="https://www.hud.gov/buying/loans" target="_blank" rel="noopener">U.S. Department of Housing and Urban Development (HUD)</a>.</p>
+    <p class="form-note" style="text-align:left;margin-top:1.8rem"><strong>Last reviewed: October 2026.</strong> This page is general education, not a loan approval or commitment to lend; program details vary by lender and can change. Learn more from <a href="https://www.hud.gov/buying/loans" target="_blank" rel="noopener">U.S. Department of Housing and Urban Development (HUD)</a>.</p>
   </div>
 </section>
 
@@ -198,6 +200,17 @@
         </ul>
       </div>
       <div>
+        <p class="foot-title">Areas Served</p>
+        <ul>
+          <li><a href="kennewick-mortgage-broker.html">Kennewick &amp; Tri-Cities</a></li>
+          <li><a href="portland-mortgage-broker.html">Portland &amp; Oregon</a></li>
+          <li><a href="idaho-mortgage-broker.html">Idaho</a></li>
+          <li><a href="texas-mortgage-broker.html">Texas</a></li>
+          <li><a href="arizona-mortgage-broker.html">Arizona</a></li>
+          <li><a href="wyoming-mortgage-broker.html">Wyoming</a></li>
+        </ul>
+      </div>
+      <div>
         <p class="foot-title">Get Started</p>
         <ul>
           <li><a href="get-a-quote.html">Get a Rate Quote</a></li>
@@ -218,5 +231,15 @@
 
 <script>(function(){var nav=document.getElementById("nav");var t=document.querySelector(".menu-toggle");if(nav){nav.querySelectorAll("a").forEach(function(l){l.addEventListener("click",function(){nav.classList.remove("open");if(t)t.setAttribute("aria-expanded","false");});});}})();</script>
 
+<script>(function(){document.addEventListener('click',function(e){
+  if(typeof gtag!=='function')return;
+  var a=e.target&&e.target.closest?e.target.closest('a[href]'):null; if(!a)return;
+  var h=a.getAttribute('href')||''; var pg=location.pathname;
+  if(h.indexOf('tel:')===0)gtag('event','contact_click',{channel:'phone',link_page:pg});
+  else if(h.indexOf('sms:')===0)gtag('event','contact_click',{channel:'text',link_page:pg});
+  else if(h.indexOf('mailto:')===0)gtag('event','contact_click',{channel:'email',link_page:pg});
+  else if(h.indexOf('calendly.com')>-1)gtag('event','appointment_click',{link_page:pg});
+  else if(h.indexOf('my1003app.com')>-1)gtag('event','application_click',{link_page:pg});
+});})();</script>
 </body>
 </html>

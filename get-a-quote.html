@@ -36,7 +36,7 @@
   "name": "Get a Mortgage Rate Quote",
   "url": "https://www.callmyfriendstef.com/get-a-quote.html",
   "description": "Request a personalized mortgage rate quote, or upload your current Loan Estimate for review.",
-  "dateModified": "2026-08-11",
+  "dateModified": "2026-10-30",
   "inLanguage": "en-US",
   "about": { "@id": "https://www.callmyfriendstef.com/#business" },
   "provider": { "@id": "https://www.callmyfriendstef.com/#business" }
@@ -91,7 +91,7 @@
     <p class="eyebrow">No Pressure · No Obligation</p>
     <h1>Get a rate quote — or let me beat your current one</h1>
     <p class="lead">Two easy ways to start: tell me a little about your goals for a personalized quote, or upload the Loan Estimate you already have and I'll see if I can do better. As an independent broker, I shop multiple lenders on your behalf.</p>
-    <p style="color:var(--muted);font-size:.92rem;max-width:62ch">These forms are for quotes and questions only. When you’re ready to move forward, the actual loan application and all financial documents go through <strong>Barrett Financial’s secure online application portal</strong> — not this website.</p>
+    <p style="color:var(--muted);font-size:.92rem;max-width:62ch">These forms are for quotes and questions only. When you’re ready to move forward, the actual loan application and all financial documents go through <strong>Barrett Financial’s secure online application portal</strong> — not this website. The one exception: you can optionally share the Loan Estimate you already have through the upload form below (feel free to black out account numbers first).</p>
     <div class="quote-jump">
       <a class="btn solid" href="#rate-quote">Get a Rate Quote</a>
       <a class="btn ghost" href="#beat-estimate">Beat My Loan Estimate</a>
@@ -108,9 +108,9 @@
       <h2>Request a personalized rate quote</h2>
       <p style="color:var(--muted)">Share a few details and I'll get back to you with options that fit your situation.</p>
     </div>
-    <form class="cg" name="rate-quote" method="POST" netlify data-netlify="true" netlify-honeypot="bot-field" action="/thanks.html" style="position:relative">
+    <form class="cg" name="rate-quote" method="POST" netlify data-netlify="true" netlify-honeypot="bot-field" action="/thanks.html?from=rate-quote" style="position:relative">
       <input type="hidden" name="form-name" value="rate-quote">
-      <p class="hp"><label>Leave this empty: <input name="bot-field"></label></p>
+      <p class="hp" aria-hidden="true"><label>Leave this empty: <input name="bot-field"></label></p>
 
       <div class="row2">
         <div><label for="rq-name">Name</label><input id="rq-name" name="name" maxlength="100" type="text" autocomplete="name" required></div>
@@ -167,7 +167,7 @@
       <textarea id="rq-msg" name="message" maxlength="2000"></textarea>
 
       <button class="btn solid" type="submit">Send My Quote Request</button>
-      <p class="disclaimer">This is a request for a rate estimate — not a loan application or a commitment to lend. Actual rates and terms depend on a full review of your credit, income, and property. By submitting, you agree to be contacted about your inquiry. <strong>Please don’t include Social Security numbers, account numbers, or financial documents in this form</strong> — loan documents are only collected through the secure application portal.</p>
+      <p class="disclaimer">This is a request for a rate estimate — not a loan application or a commitment to lend. Actual rates and terms depend on a full review of your credit, income, and property. By submitting, you agree to be contacted about your inquiry. <strong>Please don’t include Social Security numbers, account numbers, or financial documents in this form</strong> — underwriting documents go through the secure application portal.</p>
     </form>
   </div>
 </section>
@@ -181,9 +181,9 @@
       <h2>Already have a Loan Estimate? Let me beat it.</h2>
       <p style="color:var(--muted)">Upload the Loan Estimate you got from another lender and I'll review it and see if I can find you a better deal.</p>
     </div>
-    <form class="cg" name="beat-estimate" method="POST" netlify data-netlify="true" netlify-honeypot="bot-field" enctype="multipart/form-data" action="/thanks.html" style="position:relative">
+    <form class="cg" name="beat-estimate" method="POST" netlify data-netlify="true" netlify-honeypot="bot-field" enctype="multipart/form-data" action="/thanks.html?from=beat-estimate" style="position:relative">
       <input type="hidden" name="form-name" value="beat-estimate">
-      <p class="hp"><label>Leave this empty: <input name="bot-field"></label></p>
+      <p class="hp" aria-hidden="true"><label>Leave this empty: <input name="bot-field"></label></p>
 
       <div class="row2">
         <div><label for="be-name">Name</label><input id="be-name" name="name" maxlength="100" type="text" autocomplete="name" required></div>
@@ -235,6 +235,17 @@
         </ul>
       </div>
       <div>
+        <p class="foot-title">Areas Served</p>
+        <ul>
+          <li><a href="kennewick-mortgage-broker.html">Kennewick &amp; Tri-Cities</a></li>
+          <li><a href="portland-mortgage-broker.html">Portland &amp; Oregon</a></li>
+          <li><a href="idaho-mortgage-broker.html">Idaho</a></li>
+          <li><a href="texas-mortgage-broker.html">Texas</a></li>
+          <li><a href="arizona-mortgage-broker.html">Arizona</a></li>
+          <li><a href="wyoming-mortgage-broker.html">Wyoming</a></li>
+        </ul>
+      </div>
+      <div>
         <p class="foot-title">Get Started</p>
         <ul>
           <li><a href="get-a-quote.html">Get a Rate Quote</a></li>
@@ -255,5 +266,15 @@
   (function(){var nav=document.getElementById('nav');var toggle=document.querySelector('.menu-toggle');if(!nav)return;nav.querySelectorAll('a').forEach(function(link){link.addEventListener('click',function(){nav.classList.remove('open');if(toggle)toggle.setAttribute('aria-expanded','false');});});})();
 </script>
 
+<script>(function(){document.addEventListener('click',function(e){
+  if(typeof gtag!=='function')return;
+  var a=e.target&&e.target.closest?e.target.closest('a[href]'):null; if(!a)return;
+  var h=a.getAttribute('href')||''; var pg=location.pathname;
+  if(h.indexOf('tel:')===0)gtag('event','contact_click',{channel:'phone',link_page:pg});
+  else if(h.indexOf('sms:')===0)gtag('event','contact_click',{channel:'text',link_page:pg});
+  else if(h.indexOf('mailto:')===0)gtag('event','contact_click',{channel:'email',link_page:pg});
+  else if(h.indexOf('calendly.com')>-1)gtag('event','appointment_click',{link_page:pg});
+  else if(h.indexOf('my1003app.com')>-1)gtag('event','application_click',{link_page:pg});
+});})();</script>
 </body>
 </html>

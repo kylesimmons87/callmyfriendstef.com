@@ -31,3 +31,102 @@
   to = "/"
   status = 301
   force = true
+
+# Canonical URL convention is .html (the indexed version). Each extensionless
+# alias 301s once to its canonical so both routes stop serving duplicate 200s.
+[[redirects]]
+  from = "/about"
+  to = "/about.html"
+  status = 301
+[[redirects]]
+  from = "/arizona-mortgage-broker"
+  to = "/arizona-mortgage-broker.html"
+  status = 301
+[[redirects]]
+  from = "/bank-statement-loans"
+  to = "/bank-statement-loans.html"
+  status = 301
+[[redirects]]
+  from = "/conventional-loans"
+  to = "/conventional-loans.html"
+  status = 301
+[[redirects]]
+  from = "/dscr-loans"
+  to = "/dscr-loans.html"
+  status = 301
+[[redirects]]
+  from = "/faq"
+  to = "/faq.html"
+  status = 301
+[[redirects]]
+  from = "/fha-loans"
+  to = "/fha-loans.html"
+  status = 301
+[[redirects]]
+  from = "/first-time-homebuyer-guide"
+  to = "/first-time-homebuyer-guide.html"
+  status = 301
+[[redirects]]
+  from = "/get-a-quote"
+  to = "/get-a-quote.html"
+  status = 301
+[[redirects]]
+  from = "/idaho-mortgage-broker"
+  to = "/idaho-mortgage-broker.html"
+  status = 301
+[[redirects]]
+  from = "/itin-loans"
+  to = "/itin-loans.html"
+  status = 301
+[[redirects]]
+  from = "/jumbo-loans"
+  to = "/jumbo-loans.html"
+  status = 301
+[[redirects]]
+  from = "/kennewick-mortgage-broker"
+  to = "/kennewick-mortgage-broker.html"
+  status = 301
+[[redirects]]
+  from = "/legal"
+  to = "/legal.html"
+  status = 301
+[[redirects]]
+  from = "/loan-options"
+  to = "/loan-options.html"
+  status = 301
+[[redirects]]
+  from = "/mortgage-calculator"
+  to = "/mortgage-calculator.html"
+  status = 301
+[[redirects]]
+  from = "/portland-mortgage-broker"
+  to = "/portland-mortgage-broker.html"
+  status = 301
+[[redirects]]
+  from = "/privacy"
+  to = "/privacy.html"
+  status = 301
+[[redirects]]
+  from = "/refinance"
+  to = "/refinance.html"
+  status = 301
+[[redirects]]
+  from = "/texas-mortgage-broker"
+  to = "/texas-mortgage-broker.html"
+  status = 301
+[[redirects]]
+  from = "/thanks"
+  to = "/thanks.html"
+  status = 301
+[[redirects]]
+  from = "/usda-loans"
+  to = "/usda-loans.html"
+  status = 301
+[[redirects]]
+  from = "/va-loans"
+  to = "/va-loans.html"
+  status = 301
+[[redirects]]
+  from = "/wyoming-mortgage-broker"
+  to = "/wyoming-mortgage-broker.html"
+  status = 301

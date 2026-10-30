@@ -44,7 +44,7 @@
     "@id": "https://www.callmyfriendstef.com/#business"
   },
   "datePublished": "2026-09-26",
-  "dateModified": "2026-09-26",
+  "dateModified": "2026-10-30",
   "inLanguage": "en-US",
   "mainEntityOfPage": "https://www.callmyfriendstef.com/first-time-homebuyer-guide.html",
   "about": {
@@ -163,7 +163,7 @@
   </ul>
 
   <h2>Ready when you are</h2>
-  <p>Run your numbers in the <a href="mortgage-calculator.html">mortgage calculators</a>, <a href="get-a-quote.html">request a no-obligation rate quote</a>, or just <a href="sms:+15034817866">text me</a> your questions — that's genuinely how most of my client relationships start. When you're ready to move forward, the application and all financial documents go through Barrett Financial's secure online portal.</p>
+  <p>Run your numbers in the <a href="mortgage-calculator.html">mortgage calculators</a>, <a href="get-a-quote.html">request a no-obligation rate quote</a>, or just <a href="sms:+15034817866">text me</a> your questions — that's genuinely how most of my client relationships start. When you're ready to move forward, the application and all financial documents go through Barrett Financial's secure online portal (the optional Loan Estimate upload on the quote page is the one exception).</p>
 
   <p class="form-note" style="text-align:left;margin-top:2rem"><strong>Last reviewed: September 2026.</strong> This guide is general education, not financial advice, a loan approval, or a commitment to lend. Program details vary by lender and can change. For an official plain-language resource, see the CFPB's <a href="https://www.consumerfinance.gov/owning-a-home/" target="_blank" rel="noopener">Buying a House</a> tools.</p>
 </main>
@@ -194,6 +194,17 @@
         </ul>
       </div>
       <div>
+        <p class="foot-title">Areas Served</p>
+        <ul>
+          <li><a href="kennewick-mortgage-broker.html">Kennewick &amp; Tri-Cities</a></li>
+          <li><a href="portland-mortgage-broker.html">Portland &amp; Oregon</a></li>
+          <li><a href="idaho-mortgage-broker.html">Idaho</a></li>
+          <li><a href="texas-mortgage-broker.html">Texas</a></li>
+          <li><a href="arizona-mortgage-broker.html">Arizona</a></li>
+          <li><a href="wyoming-mortgage-broker.html">Wyoming</a></li>
+        </ul>
+      </div>
+      <div>
         <p class="foot-title">Get Started</p>
         <ul>
           <li><a href="get-a-quote.html">Get a Rate Quote</a></li>
@@ -213,5 +224,15 @@
 
 <script>(function(){var nav=document.getElementById("nav");var t=document.querySelector(".menu-toggle");if(nav){nav.querySelectorAll("a").forEach(function(l){l.addEventListener("click",function(){nav.classList.remove("open");if(t)t.setAttribute("aria-expanded","false");});});}})();</script>
 
+<script>(function(){document.addEventListener('click',function(e){
+  if(typeof gtag!=='function')return;
+  var a=e.target&&e.target.closest?e.target.closest('a[href]'):null; if(!a)return;
+  var h=a.getAttribute('href')||''; var pg=location.pathname;
+  if(h.indexOf('tel:')===0)gtag('event','contact_click',{channel:'phone',link_page:pg});
+  else if(h.indexOf('sms:')===0)gtag('event','contact_click',{channel:'text',link_page:pg});
+  else if(h.indexOf('mailto:')===0)gtag('event','contact_click',{channel:'email',link_page:pg});
+  else if(h.indexOf('calendly.com')>-1)gtag('event','appointment_click',{link_page:pg});
+  else if(h.indexOf('my1003app.com')>-1)gtag('event','application_click',{link_page:pg});
+});})();</script>
 </body>
 </html>

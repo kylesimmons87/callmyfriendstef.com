@@ -172,7 +172,7 @@ form.cg input,form.cg textarea,form.cg select{
 form.cg input:focus,form.cg textarea:focus,form.cg select:focus{outline:2px solid var(--ink);border-color:var(--ink)}
 form.cg textarea{min-height:120px;resize:vertical}
 form.cg .btn{margin-top:1.2rem;width:100%;justify-content:center}
-form.cg .hp{position:absolute;left:-9999px}
+form.cg .hp{display:none}
 .form-note{font-size:.78rem;color:var(--muted);margin-top:.9rem;text-align:center}
 .form-note a{color:var(--accent-text);font-weight:600}
 .form-note a:hover{text-decoration:underline}
